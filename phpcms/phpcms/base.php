@@ -131,8 +131,11 @@ define('IMG_PATH',pc_base::load_config('system','img_path'));
 define('APP_PATH',pc_base::load_config('system','app_path'));
 
 //前段模板的静态资源路径
-
-define('TPL_STATIC_PATH',pc_base::load_config('system','tpl_static_path'));
+//
+$sitelist = getcache('sitelist','commons');
+$stlye=$sitelist[1]['default_style'];
+$tpl_static_path='http://'.SITE_URL.'/statics/'.$stlye.'_files/';
+define('TPL_STATIC_PATH',$tpl_static_path);
 
 //应用静态文件路径
 

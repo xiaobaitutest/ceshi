@@ -115,3 +115,4 @@
 <?php exit;?>11-29 21:48:28 | 2 | chmod(): No such file or directory | phpcms\modules\admin\classes\cache_api.class.php | 394
 <?php exit;?>11-29 21:48:28 | 2 | file_put_contents(C:\wamp\www\phpcms\caches\caches_model\caches_data\member_output.class.php): failed to open stream: No such file or directory | phpcms\modules\admin\classes\cache_api.class.php | 393
 <?php exit;?>11-29 21:48:28 | 2 | chmod(): No such file or directory | phpcms\modules\admin\classes\cache_api.class.php | 394
+<?php exit;?>12-28 14:28:59 | 2048 | Only variables should be passed by reference | phpcms\modules\member\index.php | 236

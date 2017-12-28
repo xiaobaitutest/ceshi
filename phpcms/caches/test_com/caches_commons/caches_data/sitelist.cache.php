@@ -10,8 +10,8 @@ return array (
     'keywords' => 'PHPCMS演示站',
     'description' => 'PHPCMS演示站',
     'release_point' => '',
-    'default_style' => 'default',
-    'template' => 'default',
+    'default_style' => 'template1',
+    'template' => 'template1',
     'setting' => 'array (
   \'upload_maxsize\' => \'2048\',
   \'upload_allowext\' => \'jpg|jpeg|gif|bmp|png|doc|docx|xls|xlsx|ppt|pptx|pdf|txt|rar|zip|swf\',

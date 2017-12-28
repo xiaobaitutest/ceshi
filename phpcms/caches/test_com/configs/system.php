@@ -13,9 +13,9 @@ return array(
 'cookie_pre' => 'RKafn_', //Cookie 前缀，同一域名下安装多套系统时，请修改Cookie前缀
 'cookie_ttl' => 0, //Cookie 生命周期，0 表示随浏览器进程
 //模板相关配置
-'tpl_root' => 'templates/', //模板保存物理路径
-'tpl_name' => 'default', //当前模板方案目录
-'tpl_css' => 'default', //当前样式目录
+'tpl_root' => 'templates1/', //模板保存物理路径
+'tpl_name' => 'template1', //当前模板方案目录
+'tpl_css' => 'template1', //当前样式目录
 'tpl_referesh' => 1,
 'tpl_edit'=> 0,//是否允许在线编辑模板
 
