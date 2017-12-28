@@ -34,7 +34,6 @@ class index extends foreground {
 		$phpsso_api_url = $this->_init_phpsso();
 		//获取头像数组
 		$avatar = $this->client->ps_getavatar($this->memberinfo['phpssouid']);
-
 		$grouplist = getcache('grouplist');
 		$memberinfo['groupname'] = $grouplist[$memberinfo[groupid]]['name'];
 		include template('member', 'vip_list');
