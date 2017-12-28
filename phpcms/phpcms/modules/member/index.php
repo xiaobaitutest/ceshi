@@ -19,7 +19,6 @@ class index extends foreground {
 
 	public function init() {
 		$memberinfo = $this->memberinfo;
-		
 		//初始化phpsso
 		$phpsso_api_url = $this->_init_phpsso();
 		//获取头像数组
@@ -27,9 +26,17 @@ class index extends foreground {
 
 		$grouplist = getcache('grouplist');
 		$memberinfo['groupname'] = $grouplist[$memberinfo[groupid]]['name'];
-		include template('member', 'index');
+		include template('member', 'account_manage');
 	}
 	public function member_vip_list(){
+		$memberinfo = $this->memberinfo;
+		//初始化phpsso
+		$phpsso_api_url = $this->_init_phpsso();
+		//获取头像数组
+		$avatar = $this->client->ps_getavatar($this->memberinfo['phpssouid']);
+
+		$grouplist = getcache('grouplist');
+		$memberinfo['groupname'] = $grouplist[$memberinfo[groupid]]['name'];
 		include template('member', 'vip_list');
 	}
 	public function register() {
