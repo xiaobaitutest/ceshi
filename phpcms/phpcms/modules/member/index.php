@@ -29,7 +29,9 @@ class index extends foreground {
 		$memberinfo['groupname'] = $grouplist[$memberinfo[groupid]]['name'];
 		include template('member', 'index');
 	}
-	
+	public function member_vip_list(){
+		include template('member', 'vip_list');
+	}
 	public function register() {
 		$this->_session_start();
 		//获取用户siteid
