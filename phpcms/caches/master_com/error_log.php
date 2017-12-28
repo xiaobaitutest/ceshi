@@ -128,3 +128,4 @@
 <?php exit;?>12-28 16:44:43 | 2 | db_mysqli::errno(): Couldn't fetch mysqli | phpcms\libs\classes\db_mysqli.class.php | 397
 <?php exit;?>12-28 16:44:43 | 2 | db_mysqli::error(): Couldn't fetch mysqli | phpcms\libs\classes\db_mysqli.class.php | 390
 <?php exit;?>12-28 16:44:43 | 2 | mysqli::close(): Couldn't fetch mysqli | phpcms\libs\classes\db_mysqli.class.php | 409
+<?php exit;?>12-28 18:11:20 | 2048 | Only variables should be passed by reference | phpcms\modules\member\index.php | 235
