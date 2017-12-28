@@ -1,0 +1,135 @@
+<?php defined('IN_PHPCMS') or exit('No permission resources.'); ?><?php include template('member', 'header'); ?>
+<script type="text/javascript" src="<?php echo JS_PATH;?>formvalidator.js" charset="UTF-8"></script>
+
+<script language="JavaScript">
+<!--
+$(function(){
+	$.formValidator.initConfig({autotip:true,formid:"myform",onerror:function(msg){}}); 
+	$("#password").formValidator({onshow:"<?php echo L('input').L('password');?>",onfocus:"<?php echo L('password').L('between_6_to_20');?>"}).inputValidator({min:6,max:20,onerror:"<?php echo L('password').L('between_6_to_20');?>"});
+	$("#mobile").formValidator({onshow:"请输入手机号码",onfocus:"请输入手机号码"}).inputValidator({min:1,onerror:"请输入手机号码"});
+	$("#mobile_verify").formValidator({onshow:"请输入手机收到的验证码",onfocus:"请输入手机收到的验证码"}).inputValidator({min:1,onerror:"请输入手机收到的验证码"}).ajaxValidator({
+					type : "get",
+					url : "api.php",
+					data :"op=sms_idcheck&action=id_code&jscheck=1",
+					datatype : "html",
+					getdata:{mobile:"mobile"},
+ 					async:"false",
+					success : function(data){
+						if( data == "1" ) {
+							return true;
+						} else {
+							return false;
+						}
+					},
+					buttons: $("#dosubmit"),
+					onerror : "验证码错误",
+					onwait : "请稍候..."
+				});
+});
+//-->
+</script>
+<div id="memberArea">
+	<?php include template('member', 'account_manage_left'); ?>
+	<div class="col-auto">
+		<div class="col-1 ">
+			<h5 class="title"><?php echo L('change_mobile');?></h5>
+			<div class="content">
+			<form method="post" action="" id="myform" name="myform">
+				<table width="100%" cellspacing="0" class="table_form">
+					<tr>
+						<th width="120"><?php echo L('soulbound');?>：</th>        
+						<td><?php if($memberinfo['mobile']) { ?><?php echo substr($memberinfo['mobile'],0,3);?>****<?php echo substr($memberinfo['mobile'],-4);?><?php } ?></td>
+					</tr>
+					<tr>
+						<th width="120">当前账号<?php echo L('password');?>：</th>        
+						<td><input name="password" type="password" id="password" size="30" value="" class="input-text"></td>
+					</tr>
+					<tr>
+						<th width="120"><?php echo L('checkcode');?>：</th>        
+						<td><div class="input"><input type="text" id="code" name="code" size="10" class="input-text"><?php echo form::checkcode('code_img', '5', '14', 120, 26);?></div></td>
+					</tr>
+					
+					<tr>
+						<th><?php echo L('new_mobile');?>：</th>
+						<td><span id="mobile_div"><input name="mobile" type="text" id="mobile" size="15" value="" class="input-text"> <button onclick="get_verify()" type="button" class="button">获取短信校验码</button></span>
+						<div id="mobile_send_div" style="padding-top:15px;display:none">此服务免费,校验码已发送到<span id="mobile_send"></span>，<span id="edit_mobile" style="display:none"><a href="javascript:void();" onclick="edit_mobile()"><font color="red">修改号码</font></a>，</span> 如果超过120秒未收到校验码，您可以免费重新获取。<br><br>
+			<div class="submit"><button type="button" id="GetVerify" onclick="get_verify()" class="button">重获短信校验码</button></div></div> 
+			<script language="JavaScript">
+			<!--
+				var times = 120;
+				var isinerval;
+				function get_verify() {
+					var session_code = $('#code').val();
+					if(session_code=='') {
+						alert('请输入验证码');
+						$('#code').focus();
+						return false;
+					}
+					var mobile = $("#mobile").val();
+					var partten = /^1[3-9]\d{9}$/;
+					if(!partten.test(mobile)){
+						alert("请输入正确的手机号码");
+						return false;
+					}
+					$.get("api.php?op=sms",{ mobile: mobile,session_code:session_code,random:Math.random()}, function(data){
+						if(data=="0") {
+							$("#mobile_send").html(mobile);
+							$("#mobile_div").css("display","none");
+							$("#mobile_send_div").css("display","");
+							times = 120;
+							$("#GetVerify").attr("disabled", true);
+							isinerval = setInterval("CountDown()", 1000);
+						} else if(data=="-1") {
+							alert("你今天获取验证码次数已达到上限");
+						} else if(data=="-100") {
+							$('#code').val('');
+							alert("验证码已失效，请点击图片验证码获取新的验证码！");
+							$('#code').focus();
+						} else if(data=="-101") {
+							alert("验证码错误！");
+							$('#code').focus();
+						} else {
+							alert("短信发送失败");
+						}
+					});
+					
+				}
+				function CountDown() {
+					if (times < 1) {
+						$("#GetVerify").html("获取短信校验码").attr("disabled", false);
+						$("#edit_mobile").css("display","");
+						clearInterval(isinerval);
+						return;
+					}
+					$("#GetVerify").html(times+" 秒后重获校验码");
+					times--;
+				}
+				function edit_mobile() {
+					$("#mobile_div").css("display","");
+					$("#mobile_send_div").css("display","none");
+				}
+			//-->
+			</script>
+		    </div></div>
+			</td>
+					</tr>
+					<tr>
+						<th>短信校验码：</th>
+						<td><input name="mobile_verify" type="text" id="mobile_verify" size="15" value="" class="input-text"></td>
+					</tr>
+					<tr>
+						<th></th>
+						<td><input name="dosubmit" type="submit" id="dosubmit" value="<?php echo L('submit');?>" class="button"></td>
+					</tr>
+				</table>
+
+				
+			</form>
+			</div>
+			<span class="o1"></span><span class="o2"></span><span class="o3"></span><span class="o4"></span>
+		</div>
+	</div>
+</div>
+<div class="clear"></div>
+
+<?php include template('member', 'footer'); ?>
