@@ -960,7 +960,7 @@ return array (
     'url' => 'http://www.master.com/index.php?m=content&c=index&a=lists&catid=28',
     'items' => '0',
     'hits' => '0',
-    'setting' => '{"ishtml":"0","template_list":"","meta_title":"","meta_keywords":"","meta_description":"","category_ruleid":"6","show_ruleid":"","repeatchargedays":"1"}',
+    'setting' => '{"ishtml":"0","template_list":"master","page_template":"page_jiameng","meta_title":"","meta_keywords":"","meta_description":"","category_ruleid":"6","show_ruleid":"","repeatchargedays":"1"}',
     'listorder' => '28',
     'ismenu' => '1',
     'sethtml' => '0',

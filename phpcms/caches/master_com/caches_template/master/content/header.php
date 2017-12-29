@@ -8,6 +8,8 @@
 <meta name="description" content="">
 <meta name="copyright" content="<?php echo $SEO['keyword'];?>">
 <meta http-equiv="Cache-Control" content="no-transform">
+
+
 <link href="<?php echo TPL_STATIC_PATH;?>mainCss.css" rel="stylesheet" type="text/css">
 <link href="<?php echo TPL_STATIC_PATH;?>index.css" rel="stylesheet" type="text/css">
 <div class="webHead">

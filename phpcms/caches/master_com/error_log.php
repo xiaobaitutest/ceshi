@@ -141,3 +141,6 @@
 <?php exit;?>12-29 16:42:43 | 2 | fsockopen(): unable to connect to juhe.phpcms.cn:80 (php_network_getaddresses: getaddrinfo failed: ��֪������������ ) | phpcms\libs\classes\http.class.php | 84
 <?php exit;?>12-29 16:42:45 | 2 | fsockopen(): php_network_getaddresses: getaddrinfo failed: ��֪������������  | phpcms\libs\classes\http.class.php | 84
 <?php exit;?>12-29 16:42:45 | 2 | fsockopen(): unable to connect to juhe.phpcms.cn:80 (php_network_getaddresses: getaddrinfo failed: ��֪������������ ) | phpcms\libs\classes\http.class.php | 84
+<?php exit;?>12-29 17:27:03 | 2048 | Only variables should be passed by reference | phpcms\modules\member\index.php | 235
+<?php exit;?>12-29 17:42:20 | 2048 | Only variables should be passed by reference | phpcms\modules\member\index.php | 235
+<?php exit;?>12-29 18:22:39 | 2048 | Only variables should be passed by reference | phpcms\modules\member\index.php | 235
