@@ -1,5 +1,6 @@
 <?php
 return array(
+'site_id'=>`2,
 //网站路径
 'web_path' => '/',
 //Session配置

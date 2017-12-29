@@ -8,18 +8,7 @@
 	<div class="f-footer-main">
 		<div class="f-footer-wrap">
 			<div class="f-footer-partWrap">
-				<div class="f-footer-mainPart f-footer-connect">
-					<h3 class="f-footer-mainPart-title">关注我们</h3>
-					<div class="f-footer-mainPart-content">
-						<a class="f-icon icon-wx icon-wxHover">
-							<span class="f-icon-bg f-icon-bg1"></span>
-							<span class="f-icon-bg f-icon-bg2"></span>
-							<div class="f-qrCodeWrap">
-								<div class="f-qrCode"></div>
-							</div>
-						</a>
-					</div>
-				</div>
+				
 				<div class="f-footer-mainPart f-footer-partner">
 					<h3 class="f-footer-mainPart-title">合作伙伴</h3>
 					<div class="f-footer-mainPart-content">
@@ -39,16 +28,16 @@
 						<ul class="f-main-list f-friendLink-list1">
 							<li class="f-main-item"><a target="_blank" href="http://jz.faisco.com/">网站建设</a></li>
 							<li class="f-main-item"><a target="_blank" href="http://www.sitekc.com/">建站快车</a></li>
-							<li class="f-main-item"><a target="_blank" href="http://hd.faisco.com/">微信营销</a></li>
-							<li class="f-main-item"><a target="_blank" href="http://jz.faisco.com/proFunc.html?_showDomain=true">域名注册</a></li>
-							<li class="f-main-item"><a target="_blank" href="http://jz.faisco.com/model.html">网站模版</a></li>
+							<li class="f-main-item"><a target="_blank" href="#">微信营销</a></li>
+							<li class="f-main-item"><a target="_blank" href="#">域名注册</a></li>
+							<li class="f-main-item"><a target="_blank" href="#">网站模版</a></li>
 						</ul>
 						<ul class="f-main-list f-friendLink-list2">
-							<li class="f-main-item"><a target="_blank" href="http://jz.faisco.com/blog/2333">网页制作</a></li>
-							<li class="f-main-item"><a target="_blank" href="http://jz.faisco.com/blog~217.html">手机网站建设</a></li>
-							<li class="f-main-item"><a target="_blank" href="http://jz.faisco.com/blog~202.html">如何创建网站</a></li>
-							<li class="f-main-item"><a target="_blank" href="http://jz.faisco.com/blog.html?w=%E5%BE%AE%E7%BD%91%E7%AB%99">微网站制作</a></li>
-							<li class="f-main-item"><a target="_blank" href="http://jz.faisco.com/proCase2.html">客户网站</a></li>
+							<li class="f-main-item"><a target="_blank" href="#">网页制作</a></li>
+							<li class="f-main-item"><a target="_blank" href="#">手机网站建设</a></li>
+							<li class="f-main-item"><a target="_blank" href="#">如何创建网站</a></li>
+							<li class="f-main-item"><a target="_blank" href="#">微网站制作</a></li>
+							<li class="f-main-item"><a target="_blank" href="#">客户网站</a></li>
 						</ul>
 					</div>
 				</div>			
@@ -58,26 +47,21 @@
 	<div class="fk-footer-splitLine"></div>
 	<div class="foot middle f-foot">
 		<div class="footLinks">
-			<!--<span><a hidefocus="true" href="http://jz.faisco.com" title="凡科建站">首页</a></span>-->
-			<span><a hidefocus="true" href="http://www.faisco.com/about.html">关于凡科</a></span>
-			<span><a hidefocus="true" href="http://jz.faisco.com/blog.html" title="网站建设帮助">帮助中心</a></span>
-			<span><a hidefocus="true" href="http://jz.faisco.com/blog/124" title="凡科建站支持哪些支付方式">支付方式</a></span>
-			<span><a hidefocus="true" href="http://www.faisco.com/contract.html" target="_blank" rel="nofollow">服务条款</a></span>
-			<span><a hidefocus="true" href="http://www.faisco.com/contract.html?s=2" rel="nofollow">法律声明</a></span>
-			<span><a hidefocus="true" href="http://jz.faisco.com/proCase.html" target="_blank">企业网站</a></span>
-			<span><a hidefocus="true" href="http://jz.faisco.com/city/city.html" title="全国网站建设服务范围">省市建站</a></span>
-			<span><a hidefocus="true" href="http://jz.faisco.com/" title="自助建站">自助建站</a></span>
-			<span><a hidefocus="true" href="http://jz.faisco.com/" title="网站建设">网站建设</a></span>
-			<span><a hidefocus="true" href="http://jz.faisco.com/" title="网站">网站</a></span>
+			<span><a hidefocus="true" href="">关于小白兔</a></span>
+			<span><a hidefocus="true" href="#" 帮助中心</a></span>
+			<span><a hidefocus="true" href="#" >支付方式</a></span>
+			<span><a hidefocus="true" href="#">服务条款</a></span>
+			<span><a hidefocus="true" href="#" rel="nofollow">法律声明</a></span>
+			<span><a hidefocus="true" href="#" >企业网站</a></span>
+			<span><a hidefocus="true" href="#">省市建站</a></span>
+			<span><a hidefocus="true" href="#" >自助建站</a></span>
+			<span><a hidefocus="true" href="#" >网站建设</a></span>
+			<span><a hidefocus="true" href="#">网站</a></span>
 		</div>
 		<div class="footCpy">
-			<a target="_blank" hidefocus="true" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010502000252">
-				<img class="f-img" src="<?php echo TPL_STATIC_PATH;?>beianIcon.png" width="20" height="20">
-				<span class="f-txt">粤公网安备 44010502000252号</span>
-			</a>
-			<span style="display:inline-block; margin:0 10px;">|</span>
-			Copyright <font style="font-family:'微软雅黑';">©</font> 2010-2017 广州凡科互联网科技股份有限公司 <a href="http://www.miitbeian.gov.cn/" target="_blank" rel="nofollow">粤ICP备10235580号</a> 股票代码：832828
-			<a target="_blank" hidefocus="true" href="http://www.itrust.org.cn/Home/Index/itrust_certifi?wm=1639937559" class="fk-trustLink"><img src="<?php echo TPL_STATIC_PATH;?>iTrust.jpg"></a>
+	
+			Copyright <font style="font-family:'微软雅黑';">©</font> 2010-2017 菲律宾小白兔科技股份有限公司 <a href="http://www.miitbeian.gov.cn/" target="_blank" rel="nofollow"></a> 
+			<a target="_blank" hidefocus="true" href="http://www.itrust.org.cn/Home/Index/itrust_certifi?wm=1639937559" class="fk-trustLink"></a>
 		</div>
 	</div>
 </div>
