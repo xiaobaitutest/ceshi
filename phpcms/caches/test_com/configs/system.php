@@ -1,6 +1,6 @@
 <?php
 return array(
-'site_id'=>`2,
+'site_id'=>'2',
 //网站路径
 'web_path' => '/',
 //Session配置
@@ -55,17 +55,13 @@ return array(
 'connect_enable' => '1',	//是否开启外部通行证
 'sina_akey' => '',	//sina AKEY
 'sina_skey' => '',	//sina SKEY
-
 'snda_akey' => '',	//盛大通行证 akey
 'snda_skey' => '',	//盛大通行证 skey
-
 'qq_akey' => '',	//qq skey
 'qq_skey' => '',	//qq skey
-
 'qq_appkey' => '',	//QQ号码登录 appkey
 'qq_appid' => '',	//QQ号码登录 appid
 'qq_callback' => '',	//QQ号码登录 callback
-
 'admin_url' => '',	//允许访问后台的域名
 );
 ?>

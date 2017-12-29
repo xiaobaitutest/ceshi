@@ -19,6 +19,18 @@ include $this->admin_tpl('header');
 .radio-label{ border-top:1px solid #e4e2e2; border-left:1px solid #e4e2e2}
 .radio-label td{ border-right:1px solid #e4e2e2; border-bottom:1px solid #e4e2e2;background:#f6f9fd}
 </style>
+<script type="text/javascript"> 
+<!--
+	$(function(){
+		$.formValidator.initConfig({formid:"myform",autotip:true,onerror:function(msg,obj){window.top.art.dialog({content:msg,lock:true,width:'200',height:'50'}, function(){this.close();$(obj).focus();})}});
+		$("#modelid").formValidator({onshow:"<?php echo L('select_model');?>",onfocus:"<?php echo L('select_model');?>",oncorrect:"<?php echo L('input_right');?>"}).inputValidator({min:1,onerror:"<?php echo L('select_model');?>"}).defaultPassed();
+		$("#catname").formValidator({onshow:"<?php echo L('input_catname');?>",onfocus:"<?php echo L('input_catname');?>",oncorrect:"<?php echo L('input_right');?>"}).inputValidator({min:1,onerror:"<?php echo L('input_catname');?>"}).defaultPassed();
+		$("#catdir").formValidator({onshow:"<?php echo L('input_dirname');?>",onfocus:"<?php echo L('input_dirname');?>"}).regexValidator({regexp:"^([a-zA-Z0-9、-]|[_]){0,30}$",onerror:"<?php echo L('enter_the_correct_catname');?>"}).inputValidator({min:1,onerror:"<?php echo L('input_dirname');?>"}).ajaxValidator({type : "get",url : "",data :"m=admin&c=category&a=public_check_catdir&old_dir=<?php echo $catdir;?>",datatype : "html",cached:false,getdata:{parentid:'parentid'},async:'false',success : function(data){	if( data == "1" ){return true;}else{return false;}},buttons: $("#dosubmit"),onerror : "<?php echo L('catname_have_exists');?>",onwait : "<?php echo L('connecting');?>"}).defaultPassed();
+		$("#url").formValidator({onshow:" ",onfocus:"<?php echo L('domain_name_format');?>",tipcss:{width:'300px'},empty:true}).inputValidator({onerror:"<?php echo L('domain_name_format');?>"}).regexValidator({regexp:"http:\/\/(.+)\/$",onerror:"<?php echo L('domain_end_string');?>"});
+		$("#template_list").formValidator({onshow:"<?php echo L('template_setting');?>",onfocus:"<?php echo L('template_setting');?>",oncorrect:"<?php echo L('input_right');?>"}).inputValidator({min:1,onerror:"<?php echo L('template_setting');?>"}).defaultPassed();
+	})
+//-->
+</script>
 <div class="pad-10">
 <form action="?m=admin&c=site&a=edit&siteid=<?php echo $siteid?>" method="post" id="myform">
 <fieldset>
@@ -28,14 +40,30 @@ include $this->admin_tpl('header');
     <th width="80"><?php echo L('site_name')?>：</th>
     <td class="y-bg"><input type="text" class="input-text" name="name" id="name" size="30" value="<?php echo $data['name']?>" /></td>
   </tr>
-  <tr>
-    <th><?php echo L('site_dirname')?>：</th>
-    <td class="y-bg"><?php if ($siteid == 1) { echo $data['dirname'];} else {?><input type="text" class="input-text" name="dirname" id="dirname" size="30" value="<?php echo $data['dirname']?>" /><?php }?></td>
-  </tr>
     <tr>
     <th><?php echo L('site_domain')?>：</th>
-    <td class="y-bg"><input type="text" class="input-text" name="domain" id="domain"  size="30" value="<?php echo $data['domain']?>" /></td>
+    <td class="y-bg"><?php echo $_SERVER['HTTP_HOST'] ?></td>
   </tr>
+   <tr>
+        <th>网站fcion</th>
+        <td><?php echo form::images('setting[weixin]', 'image', $setting[weixin], 'content');?></td>
+      </tr>
+ <tr>
+ <tr>
+        <th>网站logo：</th>
+        <td><?php echo form::images('setting[logo]', 'image', $setting[logo], 'content');?></td>
+ </tr>
+
+ <tr>
+  <th>客服微信：</th>
+   <td><?php echo form::images('setting[weixin]', 'image', $setting[weixin], 'content');?></td>
+ </tr>
+ 
+ <tr>
+  <th>客服QQ：</th>
+  <td class="y-bg"><input class="radio_style" name="setting[QQ]" value="<?php echo $setting['QQ'];?>" type="text"></td>
+ </tr>
+ 
 </table>
 </fieldset>
 <div class="bk10"></div>

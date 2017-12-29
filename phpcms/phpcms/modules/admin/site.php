@@ -101,6 +101,7 @@ class site extends admin {
 	}
 	
 	public function edit() {
+		pc_base::load_sys_class('form','',0);
 		$siteid = isset($_GET['siteid']) && intval($_GET['siteid']) ? intval($_GET['siteid']) : showmessage(L('illegal_parameters'), HTTP_REFERER);
 		if ($data = $this->db->get_one(array('siteid'=>$siteid))) {
 			if (isset($_POST['dosubmit'])) {

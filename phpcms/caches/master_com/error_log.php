@@ -129,3 +129,15 @@
 <?php exit;?>12-28 16:44:43 | 2 | db_mysqli::error(): Couldn't fetch mysqli | phpcms\libs\classes\db_mysqli.class.php | 390
 <?php exit;?>12-28 16:44:43 | 2 | mysqli::close(): Couldn't fetch mysqli | phpcms\libs\classes\db_mysqli.class.php | 409
 <?php exit;?>12-28 18:11:20 | 2048 | Only variables should be passed by reference | phpcms\modules\member\index.php | 235
+<?php exit;?>12-29 16:42:42 | 2 | file_put_contents(C:\xampp\htdocs\ceshi\phpcms\caches\caches_model\caches_data\member_form.class.php): failed to open stream: No such file or directory | phpcms\modules\admin\classes\cache_api.class.php | 393
+<?php exit;?>12-29 16:42:42 | 2 | chmod(): No such file or directory | phpcms\modules\admin\classes\cache_api.class.php | 394
+<?php exit;?>12-29 16:42:42 | 2 | file_put_contents(C:\xampp\htdocs\ceshi\phpcms\caches\caches_model\caches_data\member_input.class.php): failed to open stream: No such file or directory | phpcms\modules\admin\classes\cache_api.class.php | 393
+<?php exit;?>12-29 16:42:42 | 2 | chmod(): No such file or directory | phpcms\modules\admin\classes\cache_api.class.php | 394
+<?php exit;?>12-29 16:42:42 | 2 | file_put_contents(C:\xampp\htdocs\ceshi\phpcms\caches\caches_model\caches_data\member_update.class.php): failed to open stream: No such file or directory | phpcms\modules\admin\classes\cache_api.class.php | 393
+<?php exit;?>12-29 16:42:42 | 2 | chmod(): No such file or directory | phpcms\modules\admin\classes\cache_api.class.php | 394
+<?php exit;?>12-29 16:42:42 | 2 | file_put_contents(C:\xampp\htdocs\ceshi\phpcms\caches\caches_model\caches_data\member_output.class.php): failed to open stream: No such file or directory | phpcms\modules\admin\classes\cache_api.class.php | 393
+<?php exit;?>12-29 16:42:42 | 2 | chmod(): No such file or directory | phpcms\modules\admin\classes\cache_api.class.php | 394
+<?php exit;?>12-29 16:42:43 | 2 | fsockopen(): php_network_getaddresses: getaddrinfo failed: ��֪������������  | phpcms\libs\classes\http.class.php | 84
+<?php exit;?>12-29 16:42:43 | 2 | fsockopen(): unable to connect to juhe.phpcms.cn:80 (php_network_getaddresses: getaddrinfo failed: ��֪������������ ) | phpcms\libs\classes\http.class.php | 84
+<?php exit;?>12-29 16:42:45 | 2 | fsockopen(): php_network_getaddresses: getaddrinfo failed: ��֪������������  | phpcms\libs\classes\http.class.php | 84
+<?php exit;?>12-29 16:42:45 | 2 | fsockopen(): unable to connect to juhe.phpcms.cn:80 (php_network_getaddresses: getaddrinfo failed: ��֪������������ ) | phpcms\libs\classes\http.class.php | 84

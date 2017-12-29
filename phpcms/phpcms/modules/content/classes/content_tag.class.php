@@ -210,7 +210,7 @@ class content_tag {
 			if($i>$data['limit']) break;
 			if((!$cat['ismenu']) || $siteid && $cat['siteid']!=$siteid) continue;
 			if (strpos($cat['url'], '://') === false) {
-				$cat['url'] = substr($site['domain'],0,-1).$cat['url'];
+				$cat['url'] = 'http://'.$_SERVER['HTTP_HOST'].$cat['url'];
 			}
 			if($cat['parentid']==$data['catid']) {
 				$array[$catid] = $cat;

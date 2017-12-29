@@ -18,7 +18,7 @@
 		{pc:content action="category" catid="0" num="25" siteid="$siteid" order="listorder ASC"}
 		<div class="webNav">
 			<div class="nav {if $top_parentid==0}navCheck{/if} nav-first">
-				<a hidefocus="true" href="#" title="{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}">首页</a>
+				<a hidefocus="true" href="{APP_PATH}" title="{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}">首页</a>
 			</div>
 			{loop $data $r}
 			<div class="nav {if $catid==$r[catid] || $top_parentid==$r[catid]}navCheck{/if} ">

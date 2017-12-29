@@ -29,7 +29,6 @@ if(!defined('PHPCMS_PATH')) define('PHPCMS_PATH', PC_PATH.'..'.DIRECTORY_SEPARAT
 
 
 //缓存文件夹地址
-
 $host_url=$_SERVER['HTTP_HOST'];
 
 $host_url = str_ireplace('www.', '', $host_url);
@@ -41,11 +40,6 @@ $host_url = str_replace('-', '_', $host_url);
 $host_url = str_replace('.', '_', $host_url);
 
 define('CACHE_PATH', PHPCMS_PATH.'caches/'.$host_url.DIRECTORY_SEPARATOR);
-
-
-
-
-
 $master_url=MASETER_SITE;
 
 $master_url = str_ireplace('www.', '', $master_url);
@@ -128,7 +122,7 @@ define('IMG_PATH',pc_base::load_config('system','img_path'));
 
 //动态程序路径
 
-define('APP_PATH',pc_base::load_config('system','app_path'));
+define('APP_PATH','http://'.$_SERVER['HTTP_HOST'].'/');
 
 //前段模板的静态资源路径
 //
@@ -137,6 +131,17 @@ $stlye=$sitelist[1]['default_style'];
 $tpl_static_path='http://'.SITE_URL.'/statics/'.$stlye.'_files/';
 define('TPL_STATIC_PATH',$tpl_static_path);
 
+//上传文件路径,如果设置了cdn 就用cdn ，否则就用本地网站的目录
+$cdn_url=null;
+if(isset($cdn_url)){
+	$upload_url=$cdn_url;
+}else{
+	$upload_url=$_SERVER['HTTP_HOST'];
+}
+//加上10000给人感觉网站很多的样子
+$site_id=pc_base::load_config('system','site_id')+10000;
+$upload_url='http://'.$upload_url.DIRECTORY_SEPARATOR.'uploadfile'.DIRECTORY_SEPARATOR.'site_'.$site_id.DIRECTORY_SEPARATOR;
+define('UPLOAD_PATH',$upload_url);
 //应用静态文件路径
 
 define('PLUGIN_STATICS_PATH',WEB_PATH.'statics/plugin/');
