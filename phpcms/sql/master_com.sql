@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2017-12-29 18:34:57
+Date: 2018-01-11 18:29:50
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -38,7 +38,7 @@ CREATE TABLE `t_admin` (
 -- ----------------------------
 -- Records of t_admin
 -- ----------------------------
-INSERT INTO `t_admin` VALUES ('1', 'phpcms', 'e2237824cd14ea45e5bec3b8e046c8a1', '1', 'LeWexr', '127.0.0.1', '1514533694', 'test@qq.com', '', '', '');
+INSERT INTO `t_admin` VALUES ('1', 'phpcms', 'e2237824cd14ea45e5bec3b8e046c8a1', '1', 'LeWexr', '127.0.0.1', '1515484253', 'test@qq.com', '', '', '');
 
 -- ----------------------------
 -- Table structure for `t_admin_panel`
@@ -4692,7 +4692,7 @@ CREATE TABLE `t_log` (
   PRIMARY KEY (`logid`),
   KEY `module` (`module`,`file`,`action`),
   KEY `username` (`username`,`action`)
-) ENGINE=MyISAM AUTO_INCREMENT=416 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=429 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_log
@@ -5112,6 +5112,19 @@ INSERT INTO `t_log` VALUES ('412', '', '0', 'admin', '', 'category', '?m=admin&c
 INSERT INTO `t_log` VALUES ('413', '', '0', 'admin', '', 'category', '?m=admin&c=category&a=edit', '', '1', 'phpcms', '127.0.0.1', '2017-12-29 17:52:42');
 INSERT INTO `t_log` VALUES ('414', '', '0', 'admin', '', 'category', '?m=admin&c=category&a=edit', '', '1', 'phpcms', '127.0.0.1', '2017-12-29 17:53:15');
 INSERT INTO `t_log` VALUES ('415', '', '0', 'admin', '', 'category', '?m=admin&c=category&a=edit', '', '1', 'phpcms', '127.0.0.1', '2017-12-29 17:53:20');
+INSERT INTO `t_log` VALUES ('416', '', '0', 'admin', '', 'index', '?m=admin&c=index&a=login', '', '0', 'phpcms', '127.0.0.1', '2018-01-04 11:29:19');
+INSERT INTO `t_log` VALUES ('417', '', '0', 'admin', '', 'index', '?m=admin&c=index&a=login', '', '0', 'phpcms', '127.0.0.1', '2018-01-04 11:29:35');
+INSERT INTO `t_log` VALUES ('418', '', '0', 'admin', '', 'index', '?m=admin&c=index&a=login', '', '0', 'phpcms', '127.0.0.1', '2018-01-04 11:29:37');
+INSERT INTO `t_log` VALUES ('419', '', '0', 'admin', '', 'index', '?m=admin&c=index&a=login', '', '0', 'phpcms', '127.0.0.1', '2018-01-04 11:29:48');
+INSERT INTO `t_log` VALUES ('420', '', '0', 'admin', '', 'index', '?m=admin&c=index&a=login', '', '0', 'phpcms', '127.0.0.1', '2018-01-04 11:29:49');
+INSERT INTO `t_log` VALUES ('421', '', '0', 'admin', '', 'index', '?m=admin&c=index&a=login', '', '0', 'phpcms', '127.0.0.1', '2018-01-04 11:29:58');
+INSERT INTO `t_log` VALUES ('422', '', '0', 'admin', '', 'site', '?m=admin&c=site&a=edit', '', '1', 'phpcms', '127.0.0.1', '2018-01-04 11:30:04');
+INSERT INTO `t_log` VALUES ('423', '', '0', 'admin', '', 'category', '?m=admin&c=category&a=add', '', '1', 'phpcms', '127.0.0.1', '2018-01-04 11:42:25');
+INSERT INTO `t_log` VALUES ('424', '', '0', 'admin', '', 'index', '?m=admin&c=index&a=login', '', '0', 'phpcms', '127.0.0.1', '2018-01-09 13:52:07');
+INSERT INTO `t_log` VALUES ('425', '', '0', 'admin', '', 'index', '?m=admin&c=index&a=login', '', '0', 'phpcms', '127.0.0.1', '2018-01-09 15:33:03');
+INSERT INTO `t_log` VALUES ('426', '', '0', 'admin', '', 'index', '?m=admin&c=index&a=login', '', '0', 'phpcms', '127.0.0.1', '2018-01-09 15:33:55');
+INSERT INTO `t_log` VALUES ('427', '', '0', 'admin', '', 'index', '?m=admin&c=index&a=login', '', '0', 'phpcms', '127.0.0.1', '2018-01-09 15:50:53');
+INSERT INTO `t_log` VALUES ('428', '', '0', 'admin', '', 'index', '?m=admin&c=index&a=login', '', '0', 'phpcms', '127.0.0.1', '2018-01-10 15:37:01');
 
 -- ----------------------------
 -- Table structure for `t_member`
@@ -5143,16 +5156,20 @@ CREATE TABLE `t_member` (
   `connectid` char(40) NOT NULL DEFAULT '',
   `from` char(10) NOT NULL DEFAULT '',
   `mobile` char(11) NOT NULL DEFAULT '',
+  `site_num` int(10) DEFAULT '1' COMMENT '允许创建的网站个数',
   PRIMARY KEY (`userid`),
   UNIQUE KEY `username` (`username`),
   KEY `email` (`email`(20)),
   KEY `phpssouid` (`phpssouid`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_member
 -- ----------------------------
-INSERT INTO `t_member` VALUES ('1', '1', 'user1', 'f14bb0653bc328939681cef9d0b4e5d0', 'kcazMc', 'dad', '1510670387', '1510670387', '127.0.0.1', '', '0', 'dd@qq.com', '2', '0', '0.00', '0', '10', '0', '0', '0', '0', '1', '', '', '');
+INSERT INTO `t_member` VALUES ('1', '1', 'user1', 'f14bb0653bc328939681cef9d0b4e5d0', 'kcazMc', 'dad', '1510670387', '1515655724', '127.0.0.1', '127.0.0.1', '0', 'dd@qq.com', '2', '0', '0.00', '0', '10', '0', '0', '0', '0', '1', '', '', '', '10');
+INSERT INTO `t_member` VALUES ('2', '5', 'admin', '995b30e1ad8005f53139bc828894d8f1', '9ugfJi', '121', '1515483213', '1515483213', '127.0.0.1', '', '0', 'dfdaf@qq.com', '2', '0', '0.00', '0', '10', '0', '0', '0', '0', '1', '', '', '', '1');
+INSERT INTO `t_member` VALUES ('3', '0', 'xiaobai', 'a34c7d4e276763c20f9817e804d9c867', 'EgJJzR', '', '1515565623', '1515565623', '127.0.0.1', '', '0', '', '2', '0', '0.00', '0', '10', '0', '0', '0', '0', '1', '', '', '', '1');
+INSERT INTO `t_member` VALUES ('4', '0', 'xiaobai1', '0f7bc2b27cfd81697f69e8c6a0b32957', 'QBFkHZ', '', '1515566292', '1515566453', '127.0.0.1', '127.0.0.1', '0', '', '2', '0', '0.00', '0', '10', '0', '0', '0', '0', '1', '', '', '', '1');
 
 -- ----------------------------
 -- Table structure for `t_member_bank`
@@ -5185,6 +5202,9 @@ CREATE TABLE `t_member_detail` (
 -- Records of t_member_detail
 -- ----------------------------
 INSERT INTO `t_member_detail` VALUES ('1', '2017-11-17');
+INSERT INTO `t_member_detail` VALUES ('2', '2018-01-12');
+INSERT INTO `t_member_detail` VALUES ('3', null);
+INSERT INTO `t_member_detail` VALUES ('4', null);
 
 -- ----------------------------
 -- Table structure for `t_member_group`
@@ -5272,12 +5292,14 @@ CREATE TABLE `t_member_money_log` (
   `site_owner_id` int(10) DEFAULT NULL,
   `user_name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_member_money_log
 -- ----------------------------
 INSERT INTO `t_member_money_log` VALUES ('1', '121.00', '1', '12131313', '43', '1', '1', 'kime');
+INSERT INTO `t_member_money_log` VALUES ('2', '121.00', '1', '2121212', '43', '2', '1', '1212');
+INSERT INTO `t_member_money_log` VALUES ('3', '121.00', '2', '2121', '43', '1', '1', '1');
 
 -- ----------------------------
 -- Table structure for `t_member_tixian`
@@ -5292,11 +5314,14 @@ CREATE TABLE `t_member_tixian` (
   `note` varchar(255) DEFAULT NULL,
   `deal_time` int(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_member_tixian
 -- ----------------------------
+INSERT INTO `t_member_tixian` VALUES ('1', '1', '200.00', '2121313', '1', '谢谢', '12121221');
+INSERT INTO `t_member_tixian` VALUES ('2', '1', '100.00', '2000', '127', '备注', '1231313');
+INSERT INTO `t_member_tixian` VALUES ('3', '1', '100.00', '21212', '0', '备注', '2121212');
 
 -- ----------------------------
 -- Table structure for `t_member_verify`
@@ -6756,7 +6781,7 @@ CREATE TABLE `t_session` (
 -- ----------------------------
 -- Records of t_session
 -- ----------------------------
-INSERT INTO `t_session` VALUES ('5tub53l6d5vct6e9qqejrv01t6', '1', '127.0.0.1', '1514542959', '1', '0', 'member', 'index', 'register', 'code|s:5:\"nbdah\";userid|s:1:\"1\";roleid|s:1:\"1\";pc_hash|s:6:\"2X2wC3\";lock_screen|i:0;');
+INSERT INTO `t_session` VALUES ('7564s1lc2159tfgfi08mufohv6', '0', '127.0.0.1', '1515655724', '0', '0', 'member', 'index', 'master_login', 'code|s:5:\"ukhvm\";');
 
 -- ----------------------------
 -- Table structure for `t_site`
@@ -6801,24 +6826,25 @@ CREATE TABLE `t_site_list` (
   `moblie_thumb` varchar(500) DEFAULT NULL,
   `also_moblie` tinyint(1) DEFAULT '0' COMMENT '同时也是手机模板',
   `moblie_qr_thumb` varchar(255) DEFAULT NULL,
+  `type` int(10) DEFAULT NULL COMMENT '网站的类型（1，小说，2视频，3，导航）',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_site_list
 -- ----------------------------
-INSERT INTO `t_site_list` VALUES ('5', 'http://www.test5.com', '0', 'db_a', '演示站点5', '1', null, 'AAEIABACGAAgs-ORzwUouMbs6gQwhgQ4qQQ.jpg', '0', null, 'AAEIABACGAAglbCHzwUotMOk1gIwyAE45AI.jpg', '1', 'mobi_qrcode_005.gif');
-INSERT INTO `t_site_list` VALUES ('2', 'http://www.test2.com', '0', 'db_a', '演示站点2', '1', null, 'AAEIABACGAAgs-ORzwUouMbs6gQwhgQ4qQQ.jpg', '0', null, 'AAEIABACGAAglbCHzwUotMOk1gIwyAE45AI.jpg', '1', 'mobi_qrcode_005.gif');
-INSERT INTO `t_site_list` VALUES ('3', 'http://www.test3.com', '0', 'db_2', '演示站点3', '1', null, 'AAEIABACGAAg8P6bzwUosKHd3QQwhgQ44go.jpg', '0', null, 'AAEIABACGAAglbCHzwUotMOk1gIwyAE45AI.jpg', '1', 'mobi_qrcode_005.gif');
-INSERT INTO `t_site_list` VALUES ('4', 'http://www.test4.com', '0', 'db_3', '演示站点4', '1', null, 'AAEIABACGAAgsNybzwUooK7cuAcwhgQ4swo.jpg', '0', null, 'AAEIABACGAAglbCHzwUotMOk1gIwyAE45AI.jpg', '1', 'mobi_qrcode_005.gif');
-INSERT INTO `t_site_list` VALUES ('1', 'http://www.master.com', '0', 'master_com', '主站', '0', null, null, '0', null, null, null, null);
-INSERT INTO `t_site_list` VALUES ('6', 'http://www.user2.com', '1', 'db_2', '用户网站1', '0', null, 'AAEIABACGAAgs-ORzwUouMbs6gQwhgQ4qQQ.jpg', '1', '王者荣耀王昭君铭文推荐 超强的控制时间 _ 多玩王者荣耀专区', null, null, null);
-INSERT INTO `t_site_list` VALUES ('7', 'http://www.user1.com', '1', 'db_2', '用户网站2', '0', null, 'AAEIABACGAAgs-ORzwUouMbs6gQwhgQ4qQQ.jpg', '1', '王者荣耀王昭君铭文推荐 超强的控制时间 _ 多玩王者荣耀专区', null, null, null);
-INSERT INTO `t_site_list` VALUES ('8', 'http://www.user3.com', '1', 'user3_db', '用户网站3', '0', null, 'AAEIABACGAAg8P6bzwUosKHd3QQwhgQ44go.jpg', '1', '王者荣耀王昭君铭文推荐 超强的控制时间 _ 多玩王者荣耀专区', null, null, null);
-INSERT INTO `t_site_list` VALUES ('9', 'http://www.test9.com', '0', 'db-3', '演示站点9', '1', null, 'AAEIABACGAAg8P6bzwUosKHd3QQwhgQ44go.jpg', '0', null, 'AAEIABACGAAglbCHzwUotMOk1gIwyAE45AI.jpg', '1', 'mobi_qrcode_005.gif');
-INSERT INTO `t_site_list` VALUES ('10', 'http://www.test10.com', '0', 'db_a', '演示站点10', '1', null, 'AAEIABACGAAg8P6bzwUosKHd3QQwhgQ44go.jpg', '0', null, 'AAEIABACGAAglbCHzwUotMOk1gIwyAE45AI.jpg', '1', 'mobi_qrcode_005.gif');
-INSERT INTO `t_site_list` VALUES ('11', 'http://www.test11.com', '0', 'db_a', '演示站点11', '1', null, 'AAEIABACGAAg8P6bzwUosKHd3QQwhgQ44go.jpg', '0', null, 'AAEIABACGAAglbCHzwUotMOk1gIwyAE45AI.jpg', '1', 'mobi_qrcode_005.gif');
-INSERT INTO `t_site_list` VALUES ('12', 'http://www.test12.com', '0', 'db_a', '演示站点12', '1', null, 'AAEIABACGAAg8P6bzwUosKHd3QQwhgQ44go.jpg', '0', null, 'AAEIABACGAAglbCHzwUotMOk1gIwyAE45AI.jpg', '1', 'mobi_qrcode_005.gif');
+INSERT INTO `t_site_list` VALUES ('5', 'http://www.test5.com', '0', 'db_a', '演示站点5', '1', null, 'AAEIABACGAAgs-ORzwUouMbs6gQwhgQ4qQQ.jpg', '0', null, 'AAEIABACGAAglbCHzwUotMOk1gIwyAE45AI.jpg', '1', 'mobi_qrcode_005.gif', null);
+INSERT INTO `t_site_list` VALUES ('2', 'http://www.test2.com', '0', 'db_a', '演示站点2', '1', null, 'AAEIABACGAAgs-ORzwUouMbs6gQwhgQ4qQQ.jpg', '0', null, 'AAEIABACGAAglbCHzwUotMOk1gIwyAE45AI.jpg', '1', 'mobi_qrcode_005.gif', null);
+INSERT INTO `t_site_list` VALUES ('3', 'http://www.test3.com', '0', 'db_2', '演示站点3', '1', null, 'AAEIABACGAAg8P6bzwUosKHd3QQwhgQ44go.jpg', '0', null, 'AAEIABACGAAglbCHzwUotMOk1gIwyAE45AI.jpg', '1', 'mobi_qrcode_005.gif', null);
+INSERT INTO `t_site_list` VALUES ('4', 'http://www.test4.com', '0', 'db_3', '演示站点4', '1', null, 'AAEIABACGAAgsNybzwUooK7cuAcwhgQ4swo.jpg', '0', null, 'AAEIABACGAAglbCHzwUotMOk1gIwyAE45AI.jpg', '1', 'mobi_qrcode_005.gif', null);
+INSERT INTO `t_site_list` VALUES ('1', 'http://www.master.com', '0', 'master_com', '主站', '0', null, null, '0', null, null, null, null, null);
+INSERT INTO `t_site_list` VALUES ('6', 'http://www.user2.com', '1', 'db_2', '用户网站1', '0', null, 'AAEIABACGAAgs-ORzwUouMbs6gQwhgQ4qQQ.jpg', '1', '王者荣耀王昭君铭文推荐 超强的控制时间 _ 多玩王者荣耀专区', null, null, null, null);
+INSERT INTO `t_site_list` VALUES ('7', 'http://www.user1.com', '1', 'db_2', '用户网站2', '0', null, 'AAEIABACGAAgs-ORzwUouMbs6gQwhgQ4qQQ.jpg', '1', '王者荣耀王昭君铭文推荐 超强的控制时间 _ 多玩王者荣耀专区', null, null, null, null);
+INSERT INTO `t_site_list` VALUES ('8', 'http://www.user3.com', '1', 'user3_db', '用户网站3', '0', null, 'AAEIABACGAAg8P6bzwUosKHd3QQwhgQ44go.jpg', '1', '王者荣耀王昭君铭文推荐 超强的控制时间 _ 多玩王者荣耀专区', null, null, null, null);
+INSERT INTO `t_site_list` VALUES ('9', 'http://www.test9.com', '0', 'db-3', '演示站点9', '1', null, 'AAEIABACGAAg8P6bzwUosKHd3QQwhgQ44go.jpg', '0', null, 'AAEIABACGAAglbCHzwUotMOk1gIwyAE45AI.jpg', '1', 'mobi_qrcode_005.gif', null);
+INSERT INTO `t_site_list` VALUES ('10', 'http://www.test10.com', '0', 'db_a', '演示站点10', '1', null, 'AAEIABACGAAg8P6bzwUosKHd3QQwhgQ44go.jpg', '0', null, 'AAEIABACGAAglbCHzwUotMOk1gIwyAE45AI.jpg', '1', 'mobi_qrcode_005.gif', null);
+INSERT INTO `t_site_list` VALUES ('11', 'http://www.test11.com', '0', 'db_a', '演示站点11', '1', null, 'AAEIABACGAAg8P6bzwUosKHd3QQwhgQ44go.jpg', '0', null, 'AAEIABACGAAglbCHzwUotMOk1gIwyAE45AI.jpg', '1', 'mobi_qrcode_005.gif', null);
+INSERT INTO `t_site_list` VALUES ('12', 'http://www.test12.com', '0', 'db_a', '演示站点12', '1', null, 'AAEIABACGAAg8P6bzwUosKHd3QQwhgQ44go.jpg', '0', null, 'AAEIABACGAAglbCHzwUotMOk1gIwyAE45AI.jpg', '1', 'mobi_qrcode_005.gif', null);
 
 -- ----------------------------
 -- Table structure for `t_sms_report`
