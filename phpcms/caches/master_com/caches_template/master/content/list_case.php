@@ -1,536 +1,107 @@
 <?php defined('IN_PHPCMS') or exit('No permission resources.'); ?><?php include template("content","header"); ?>
 <div class="fk-banner fk-banner-case"></div>
 
-
-<div class="fk-banner fk-banner-model"></div>
-
-<!--- add start---->
-
-<div id="m" class="webModel" >
-    <div class="modelLeftContainer">
-    	<h2 class="fk-title-industry">行业选择</h2>
-        <div class="modelTypes">
-
-            <div id="modelOneType108" class='modelOneType'>
-                <a href='javascript:void(0);' class="ellipsis f-link">广告、文化、设计服务</a>
+<!-- content -->
+<div class="section-caseMenuDiv">
+    <div class="caseMenuDiv">
+        <div class="caseMenuWrap" id="menus">
+            <div id="PCMenu" class="caseMenu caseMenu-click">
+                <div class="casePCMenuTip">电脑版</div>
             </div>
-
-            <div id="modelOneType120" class='modelOneType'>
-                <a href='javascript:void(0);' class="ellipsis f-link">学校、教育、培训机构</a>
+            <div id="mobiMenu" class="caseMenu">
+                <div class="caseMobiMenuTip">手机版</div>
             </div>
-
-            <div id="modelOneType101" class='modelOneType'>
-                <a href='javascript:void(0);' class="ellipsis f-link">五金、设备、工业制品</a>
+            <span class="f-caseMenuLine"></span>
+            <div class="caseMobiConTitle">
+                <span class='caseCusBuild'>以下网站均可以免费使用&nbsp;&nbsp;</span>
+                <a hidefocus="true" class="blueText caseTestNow"  href="#" onClick="logDog(100028, 2);" target="_blank">立即试试</a>
             </div>
-
-            <div id="modelOneType118" class='modelOneType'>
-                <a href='javascript:void(0);' class="ellipsis f-link">门窗、卫浴、灯光照明</a>
-            </div>
-
-            <div id="modelOneType109" class='modelOneType'>
-                <a href='javascript:void(0);' class="ellipsis f-link">IT、软件、互联网</a>
-            </div>
-
-            <div id="modelOneType110" class='modelOneType'>
-                <a href='javascript:void(0);' class="ellipsis f-link">化工、原材料、环保</a>
-            </div>
-
-            <div id="modelOneType119" class='modelOneType'>
-                <a href='javascript:void(0);' class="ellipsis f-link">建筑建材、能源、科技</a>
-            </div>
-
-            <div id="modelOneType107" class='modelOneType'>
-                <a href='javascript:void(0);' class="ellipsis f-link">运输、房产、物业管理</a>
-            </div>
-
-            <div id="modelOneType116" class='modelOneType'>
-                <a href='javascript:void(0);' class="ellipsis f-link">金融、投资、理财保险</a>
-            </div>
-
-            <div id="modelOneType121" class='modelOneType'>
-                <a href='javascript:void(0);' class="ellipsis f-link">工商、法律、知识产权</a>
-            </div>
-
-            <div id="modelOneType123" class='modelOneType'>
-                <a href='javascript:void(0);' class="ellipsis f-link">生活服务、家政、美业</a>
-            </div>
-
-            <div id="modelOneType102" class='modelOneType'>
-                <a href='javascript:void(0);' class="ellipsis f-link">服装饰品、鞋帽箱包</a>
-            </div>
-
-            <div id="modelOneType113" class='modelOneType'>
-                <a href='javascript:void(0);' class="ellipsis f-link">医疗、保健、医药仪器</a>
-            </div>
-
-            <div id="modelOneType122" class='modelOneType'>
-                <a href='javascript:void(0);' class="ellipsis f-link">装修、装饰、室内设计</a>
-            </div>
-
-            <div id="modelOneType112" class='modelOneType'>
-                <a href='javascript:void(0);' class="ellipsis f-link">摄影、婚礼、婚庆策划</a>
-            </div>
-
-            <div id="modelOneType103" class='modelOneType'>
-                <a href='javascript:void(0);' class="ellipsis f-link">数码、家具、家居百货</a>
-            </div>
-
-            <div id="modelOneType104" class='modelOneType'>
-                <a href='javascript:void(0);' class="ellipsis f-link">食品饮料、蔬果、茶酒</a>
-            </div>
-
-            <div id="modelOneType111" class='modelOneType'>
-                <a href='javascript:void(0);' class="ellipsis f-link">政府部门、机构组织</a>
-            </div>
-
-            <div id="modelOneType106" class='modelOneType'>
-                <a href='javascript:void(0);' class="ellipsis f-link">餐饮、酒店、旅游服务</a>
-            </div>
-
-            <div id="modelOneType114" class='modelOneType'>
-                <a href='javascript:void(0);' class="ellipsis f-link">汽车、汽配、汽车服务</a>
-            </div>
-
-            <div id="modelOneType115" class='modelOneType'>
-                <a href='javascript:void(0);' class="ellipsis f-link">农业畜牲、种植养殖</a>
-            </div>
-
-            <div id="modelOneType117" class='modelOneType'>
-                <a href='javascript:void(0);' class="ellipsis f-link">体育、健身、运动器材</a>
-            </div>
-
-            <div id="modelOneType105" class='modelOneType'>
-                <a href='javascript:void(0);' class="ellipsis f-link">礼品、玩具、小商品</a>
-            </div>
-
-            <div id="modelOneType100" class='modelOneType'>
-                <a href='javascript:void(0);' class="ellipsis f-link">在线商城</a>
-            </div>
-		
-        <div class="clear"></div>
-        
         </div>
-        <div class="modelTypesDetail">
-
-        <div class="modelSecondTypes108 modelSecondTypes" style="display:none;">
-            <div class="modelSelectedType108 modelSelectedTypes">广告、文化、设计服务:</div>
-            <div class="modelKindShow">
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=70#m" class="modelSecondType modelSecondType70">广告</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=40#m" class="modelSecondType modelSecondType40">文化传媒</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=57#m" class="modelSecondType modelSecondType57">印刷包装</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=72#m" class="modelSecondType modelSecondType72">展览设计</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=81#m" class="modelSecondType modelSecondType81">园林设计</a></div>
-
-            </div>
-            <div class="clear"></div>
-        </div>
-
-        <div class="modelSecondTypes120 modelSecondTypes" style="display:none;">
-            <div class="modelSelectedType120 modelSelectedTypes">学校、教育、培训机构:</div>
-            <div class="modelKindShow">
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=128#m" class="modelSecondType modelSecondType128">学校</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=129#m" class="modelSecondType modelSecondType129">考试课程</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=130#m" class="modelSecondType modelSecondType130">技能培训</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=131#m" class="modelSecondType modelSecondType131">企业培训</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=132#m" class="modelSecondType modelSecondType132">幼教早教</a></div>
-
-            </div>
-            <div class="clear"></div>
-        </div>
-
-        <div class="modelSecondTypes101 modelSecondTypes" style="display:none;">
-            <div class="modelSelectedType101 modelSelectedTypes">五金、设备、工业制品:</div>
-            <div class="modelKindShow">
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=7#m" class="modelSecondType modelSecondType7">五金</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=21#m" class="modelSecondType modelSecondType21">电子电工</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=27#m" class="modelSecondType modelSecondType27">机械设备</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=35#m" class="modelSecondType modelSecondType35">仪器器材</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=36#m" class="modelSecondType modelSecondType36">安防监控</a></div>
-
-            </div>
-            <div class="clear"></div>
-        </div>
-
-        <div class="modelSecondTypes118 modelSecondTypes" style="display:none;">
-            <div class="modelSelectedType118 modelSelectedTypes">门窗、卫浴、灯光照明:</div>
-            <div class="modelKindShow">
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=123#m" class="modelSecondType modelSecondType123">门窗</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=124#m" class="modelSecondType modelSecondType124">卫浴</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=125#m" class="modelSecondType modelSecondType125">灯光照明</a></div>
-
-            </div>
-            <div class="clear"></div>
-        </div>
-
-        <div class="modelSecondTypes109 modelSecondTypes" style="display:none;">
-            <div class="modelSelectedType109 modelSelectedTypes">IT、软件、互联网:</div>
-            <div class="modelKindShow">
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=78#m" class="modelSecondType modelSecondType78">IT</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=103#m" class="modelSecondType modelSecondType103">软件</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=100#m" class="modelSecondType modelSecondType100">互联网</a></div>
-
-            </div>
-            <div class="clear"></div>
-        </div>
-
-        <div class="modelSecondTypes110 modelSecondTypes" style="display:none;">
-            <div class="modelSelectedType110 modelSelectedTypes">化工、原材料、环保:</div>
-            <div class="modelKindShow">
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=26#m" class="modelSecondType modelSecondType26">纺织辅料</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=24#m" class="modelSecondType modelSecondType24">化工涂料</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=65#m" class="modelSecondType modelSecondType65">橡胶塑料</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=56#m" class="modelSecondType modelSecondType56">环保回收</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=144#m" class="modelSecondType modelSecondType144">甲醛处理</a></div>
-
-            </div>
-            <div class="clear"></div>
-        </div>
-
-        <div class="modelSecondTypes119 modelSecondTypes" style="display:none;">
-            <div class="modelSelectedType119 modelSelectedTypes">建筑建材、能源、科技:</div>
-            <div class="modelKindShow">
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=134#m" class="modelSecondType modelSecondType134">新能源</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=126#m" class="modelSecondType modelSecondType126">建筑工程</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=127#m" class="modelSecondType modelSecondType127">建材物料</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=135#m" class="modelSecondType modelSecondType135">智能科技</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=133#m" class="modelSecondType modelSecondType133">太阳能光伏</a></div>
-
-            </div>
-            <div class="clear"></div>
-        </div>
-
-        <div class="modelSecondTypes107 modelSecondTypes" style="display:none;">
-            <div class="modelSelectedType107 modelSelectedTypes">运输、房产、物业管理:</div>
-            <div class="modelKindShow">
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=30#m" class="modelSecondType modelSecondType30">贸易</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=6#m" class="modelSecondType modelSecondType6">运输</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=31#m" class="modelSecondType modelSecondType31">房地产</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=136#m" class="modelSecondType modelSecondType136">物业管理</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=145#m" class="modelSecondType modelSecondType145">搬家快递</a></div>
-
-            </div>
-            <div class="clear"></div>
-        </div>
-
-        <div class="modelSecondTypes116 modelSecondTypes" style="display:none;">
-            <div class="modelSelectedType116 modelSelectedTypes">金融、投资、理财保险:</div>
-            <div class="modelKindShow">
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=115#m" class="modelSecondType modelSecondType115">大宗交易</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=116#m" class="modelSecondType modelSecondType116">资本投资</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=117#m" class="modelSecondType modelSecondType117">理财贷款</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=118#m" class="modelSecondType modelSecondType118">股票保险</a></div>
-
-            </div>
-            <div class="clear"></div>
-        </div>
-
-        <div class="modelSecondTypes121 modelSecondTypes" style="display:none;">
-            <div class="modelSelectedType121 modelSelectedTypes">工商、法律、知识产权:</div>
-            <div class="modelKindShow">
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=74#m" class="modelSecondType modelSecondType74">工商服务</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=80#m" class="modelSecondType modelSecondType80">人力资源</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=73#m" class="modelSecondType modelSecondType73">法律服务</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=137#m" class="modelSecondType modelSecondType137">知识产权</a></div>
-
-            </div>
-            <div class="clear"></div>
-        </div>
-
-        <div class="modelSecondTypes123 modelSecondTypes" style="display:none;">
-            <div class="modelSelectedType123 modelSelectedTypes">生活服务、家政、美业:</div>
-            <div class="modelKindShow">
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=141#m" class="modelSecondType modelSecondType141">保洁</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=142#m" class="modelSecondType modelSecondType142">保姆月嫂</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=143#m" class="modelSecondType modelSecondType143">美发美甲</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=32#m" class="modelSecondType modelSecondType32">美容护肤</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=101#m" class="modelSecondType modelSecondType101">生活服务</a></div>
-
-            </div>
-            <div class="clear"></div>
-        </div>
-
-        <div class="modelSecondTypes102 modelSecondTypes" style="display:none;">
-            <div class="modelSelectedType102 modelSelectedTypes">服装饰品、鞋帽箱包:</div>
-            <div class="modelKindShow">
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=1#m" class="modelSecondType modelSecondType1">服装</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=60#m" class="modelSecondType modelSecondType60">饰品</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=2#m" class="modelSecondType modelSecondType2">鞋帽箱包</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=20#m" class="modelSecondType modelSecondType20">户外用品</a></div>
-
-            </div>
-            <div class="clear"></div>
-        </div>
-
-        <div class="modelSecondTypes113 modelSecondTypes" style="display:none;">
-            <div class="modelSelectedType113 modelSelectedTypes">医疗、保健、医药仪器:</div>
-            <div class="modelKindShow">
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=107#m" class="modelSecondType modelSecondType107">医院</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=122#m" class="modelSecondType modelSecondType122">中医</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=106#m" class="modelSecondType modelSecondType106">医疗器械</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=105#m" class="modelSecondType modelSecondType105">医药保健品</a></div>
-
-            </div>
-            <div class="clear"></div>
-        </div>
-
-        <div class="modelSecondTypes122 modelSecondTypes" style="display:none;">
-            <div class="modelSelectedType122 modelSelectedTypes">装修、装饰、室内设计:</div>
-            <div class="modelKindShow">
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=138#m" class="modelSecondType modelSecondType138">装修</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=139#m" class="modelSecondType modelSecondType139">装饰装潢</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=140#m" class="modelSecondType modelSecondType140">室内设计</a></div>
-
-            </div>
-            <div class="clear"></div>
-        </div>
-
-        <div class="modelSecondTypes112 modelSecondTypes" style="display:none;">
-            <div class="modelSelectedType112 modelSelectedTypes">摄影、婚礼、婚庆策划:</div>
-            <div class="modelKindShow">
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=45#m" class="modelSecondType modelSecondType45">鲜花</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=47#m" class="modelSecondType modelSecondType47">婚庆</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=87#m" class="modelSecondType modelSecondType87">摄影</a></div>
-
-            </div>
-            <div class="clear"></div>
-        </div>
-
-        <div class="modelSecondTypes103 modelSecondTypes" style="display:none;">
-            <div class="modelSelectedType103 modelSelectedTypes">数码、家具、家居百货:</div>
-            <div class="modelKindShow">
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=13#m" class="modelSecondType modelSecondType13">电脑</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=14#m" class="modelSecondType modelSecondType14">电器</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=12#m" class="modelSecondType modelSecondType12">手机数码</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=10#m" class="modelSecondType modelSecondType10">家私家具</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=63#m" class="modelSecondType modelSecondType63">家居家纺</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=64#m" class="modelSecondType modelSecondType64">日用百货</a></div>
-
-            </div>
-            <div class="clear"></div>
-        </div>
-
-        <div class="modelSecondTypes104 modelSecondTypes" style="display:none;">
-            <div class="modelSelectedType104 modelSelectedTypes">食品饮料、蔬果、茶酒:</div>
-            <div class="modelKindShow">
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=95#m" class="modelSecondType modelSecondType95">蔬果</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=38#m" class="modelSecondType modelSecondType38">茶叶</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=39#m" class="modelSecondType modelSecondType39">酒类</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=37#m" class="modelSecondType modelSecondType37">食品饮料</a></div>
-
-            </div>
-            <div class="clear"></div>
-        </div>
-
-        <div class="modelSecondTypes111 modelSecondTypes" style="display:none;">
-            <div class="modelSelectedType111 modelSelectedTypes">政府部门、机构组织:</div>
-            <div class="modelKindShow">
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=85#m" class="modelSecondType modelSecondType85">政府</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=86#m" class="modelSecondType modelSecondType86">机构组织</a></div>
-
-            </div>
-            <div class="clear"></div>
-        </div>
-
-        <div class="modelSecondTypes106 modelSecondTypes" style="display:none;">
-            <div class="modelSelectedType106 modelSelectedTypes">餐饮、酒店、旅游服务:</div>
-            <div class="modelKindShow">
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=44#m" class="modelSecondType modelSecondType44">餐饮</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=43#m" class="modelSecondType modelSecondType43">酒店</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=18#m" class="modelSecondType modelSecondType18">旅游</a></div>
-
-            </div>
-            <div class="clear"></div>
-        </div>
-
-        <div class="modelSecondTypes114 modelSecondTypes" style="display:none;">
-            <div class="modelSelectedType114 modelSelectedTypes">汽车、汽配、汽车服务:</div>
-            <div class="modelKindShow">
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=110#m" class="modelSecondType modelSecondType110">汽配</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=108#m" class="modelSecondType modelSecondType108">汽车官网</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=111#m" class="modelSecondType modelSecondType111">汽车服务</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=109#m" class="modelSecondType modelSecondType109">汽车买卖租赁</a></div>
-
-            </div>
-            <div class="clear"></div>
-        </div>
-
-        <div class="modelSecondTypes115 modelSecondTypes" style="display:none;">
-            <div class="modelSelectedType115 modelSelectedTypes">农业畜牲、种植养殖:</div>
-            <div class="modelKindShow">
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=84#m" class="modelSecondType modelSecondType84">宠物</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=112#m" class="modelSecondType modelSecondType112">育苗种植</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=113#m" class="modelSecondType modelSecondType113">养殖牲畜</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=114#m" class="modelSecondType modelSecondType114">农资农科</a></div>
-
-            </div>
-            <div class="clear"></div>
-        </div>
-
-        <div class="modelSecondTypes117 modelSecondTypes" style="display:none;">
-            <div class="modelSelectedType117 modelSelectedTypes">体育、健身、运动器材:</div>
-            <div class="modelKindShow">
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=120#m" class="modelSecondType modelSecondType120">健身俱乐部</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=119#m" class="modelSecondType modelSecondType119">运动器材设施</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=121#m" class="modelSecondType modelSecondType121">体育机构协会</a></div>
-
-            </div>
-            <div class="clear"></div>
-        </div>
-
-        <div class="modelSecondTypes105 modelSecondTypes" style="display:none;">
-            <div class="modelSelectedType105 modelSelectedTypes">礼品、玩具、小商品:</div>
-            <div class="modelKindShow">
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=46#m" class="modelSecondType modelSecondType46">礼品</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=16#m" class="modelSecondType modelSecondType16">文具</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=15#m" class="modelSecondType modelSecondType15">玩具乐器</a></div>
-
-            </div>
-            <div class="clear"></div>
-        </div>
-
-        <div class="modelSecondTypes100 modelSecondTypes" style="display:none;">
-            <div class="modelSelectedType100 modelSelectedTypes">在线商城:</div>
-            <div class="modelKindShow">
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=1015#m" class="modelSecondType modelSecondType1015">网络教育</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=1013#m" class="modelSecondType modelSecondType1013">电商平台</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=1014#m" class="modelSecondType modelSecondType1014">优惠商城</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=1001#m" class="modelSecondType modelSecondType1001">服装饰品</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=1002#m" class="modelSecondType modelSecondType1002">鞋帽箱包</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=1006#m" class="modelSecondType modelSecondType1006">美容护肤</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=1003#m" class="modelSecondType modelSecondType1003">手机数码</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=1007#m" class="modelSecondType modelSecondType1007">食品饮料</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=1004#m" class="modelSecondType modelSecondType1004">家电办公</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=1005#m" class="modelSecondType modelSecondType1005">家装建材</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=1008#m" class="modelSecondType modelSecondType1008">母婴专区</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=1010#m" class="modelSecondType modelSecondType1010">蔬果茶酒</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=1011#m" class="modelSecondType modelSecondType1011">日用百货</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=1012#m" class="modelSecondType modelSecondType1012">汽车汽配</a></div>
-
-                <div class='modelKindShowInner'><a href="http://jz.faisco.com/model.html?k=1009#m" class="modelSecondType modelSecondType1009">外贸</a></div>
-
-            </div>
-            <div class="clear"></div>
-        </div>
-
-
-        </div>
-        <div class="modelContainer fk-modelContainer" id="modelContainer">
-            <div class="fk-modelPreForm-wrap" id="modelList">
-			<div class='fk-modelPreForm'><div class='f-modelPreInnerForm'><div class='fk-websiteWin'></div><div class='f-pcModel'><a class='f-pcModelUrl' href='//fkgg22.faisco.cn' target='_blank' hidefocus='true' title='点击查看模板网站，可以一键复制整个网站' ref='nofollow'><img class='f-pcModelImg' src='http://d1.faiusr.com/2/AAEIABACGAAgnK_RzwUo7JfX8QYwhgQ4-ws.jpg' alt='' /></a></div><div class='f-mobiModel'><div class='fk-mobiWin'></div><a class='f-mobiModelUrl' href='//fkgg22.faisco.cn' target='_blank' hidefocus='true' title='点击查看模板网站，可以一键复制整个网站' ref='nofollow'><img class='f-mobiModelImg' src='http://d1.faiusr.com/2/AAEIABACGAAg5Iqj0QUo1MexrgcwyAE45AI.jpg' alt='' /></a></div></div></div><div class='fk-modelPreForm'><div class='f-modelPreInnerForm'><div class='fk-websiteWin'></div><div class='f-pcModel'><a class='f-pcModelUrl' href='//fkjzjc25.faisco.cn' target='_blank' hidefocus='true' title='点击查看模板网站，可以一键复制整个网站' ref='nofollow'><img class='f-pcModelImg' src='http://d1.faiusr.com/2/AAEIABACGAAgnYShzwUo6K7w7wYwhgQ40A0.jpg' alt='' /></a></div><div class='f-mobiModel'><div class='fk-mobiWin'></div><a class='f-mobiModelUrl' href='//fkjzjc25.faisco.cn' target='_blank' hidefocus='true' title='点击查看模板网站，可以一键复制整个网站' ref='nofollow'><img class='f-mobiModelImg' src='http://d1.faiusr.com/2/AAEIABACGAAg0YWhzwUo0MiJgAUwyAE45AI.jpg' alt='' /></a></div></div></div><div class='fk-modelPreForm'><div class='f-modelPreInnerForm'><div class='fk-websiteWin'></div><div class='f-pcModel'><a class='f-pcModelUrl' href='//fkrj01.faisco.cn' target='_blank' hidefocus='true' title='点击查看模板网站，可以一键复制整个网站' ref='nofollow'><img class='f-pcModelImg' src='http://d1.faiusr.com/2/AAEIABACGAAgobrLzwUo4JHzlgIwhgQ49Qg.jpg' alt='' /></a></div><div class='f-mobiModel'><div class='fk-mobiWin'></div><a class='f-mobiModelUrl' href='//fkrj01.faisco.cn' target='_blank' hidefocus='true' title='点击查看模板网站，可以一键复制整个网站' ref='nofollow'><img class='f-mobiModelImg' src='http://d1.faiusr.com/2/AAEIABACGAAgtMDC0QUo9PPFjAIwyAE45AI.jpg' alt='' /></a></div></div></div><div class='fk-modelPreForm'><div class='f-modelPreInnerForm'><div class='fk-websiteWin'></div><div class='f-pcModel'><a class='f-pcModelUrl' href='//fkjxsb22.faisco.cn' target='_blank' hidefocus='true' title='点击查看模板网站，可以一键复制整个网站' ref='nofollow'><img class='f-pcModelImg' src='http://d1.faiusr.com/2/AAEIABACGAAg7cuRzwUo-p2d8gMwhgQ48Ao.jpg' alt='' /></a></div><div class='f-mobiModel'><div class='fk-mobiWin'></div><a class='f-mobiModelUrl' href='//fkjxsb22.faisco.cn' target='_blank' hidefocus='true' title='点击查看模板网站，可以一键复制整个网站' ref='nofollow'><img class='f-mobiModelImg' src='http://d1.faiusr.com/2/AAEIABACGAAg7ZzC0QUokrPsrQYwyAE45AI.jpg' alt='' /></a></div></div></div><div class='fk-modelPreForm'><div class='f-modelPreInnerForm'><div class='fk-websiteWin'></div><div class='f-pcModel'><a class='f-pcModelUrl' href='//fkschoo29.faisco.cn' target='_blank' hidefocus='true' title='点击查看模板网站，可以一键复制整个网站' ref='nofollow'><img class='f-pcModelImg' src='http://d1.faiusr.com/2/AAEIABACGAAgkt6bzwUoq6-_fzCGBDjRCQ.jpg' alt='' /></a></div><div class='f-mobiModel'><div class='fk-mobiWin'></div><a class='f-mobiModelUrl' href='//fkschoo29.faisco.cn' target='_blank' hidefocus='true' title='点击查看模板网站，可以一键复制整个网站' ref='nofollow'><img class='f-mobiModelImg' src='http://d1.faiusr.com/2/AAEIABACGAAglt6bzwUonuvIpQIwyAE45AI.jpg' alt='' /></a></div></div></div><div class='fk-modelPreForm'><div class='f-modelPreInnerForm'><div class='fk-websiteWin'></div><div class='f-pcModel'><a class='f-pcModelUrl' href='//fksm15.faisco.cn' target='_blank' hidefocus='true' title='点击查看模板网站，可以一键复制整个网站' ref='nofollow'><img class='f-pcModelImg' src='http://d1.faiusr.com/2/AAEIABACGAAgk7CHzwUoor7p5gQwhgQ4gwo.jpg' alt='' /></a></div><div class='f-mobiModel'><div class='fk-mobiWin'></div><a class='f-mobiModelUrl' href='//fksm15.faisco.cn' target='_blank' hidefocus='true' title='点击查看模板网站，可以一键复制整个网站' ref='nofollow'><img class='f-mobiModelImg' src='http://d1.faiusr.com/2/AAEIABACGAAglbCHzwUotMOk1gIwyAE45AI.jpg' alt='' /></a></div></div></div><div class='fk-modelPreForm'><div class='f-modelPreInnerForm'><div class='fk-websiteWin'></div><div class='f-pcModel'><a class='f-pcModelUrl' href='//fkfz69.faisco.cn' target='_blank' hidefocus='true' title='点击查看模板网站，可以一键复制整个网站' ref='nofollow'><img class='f-pcModelImg' src='http://d1.faiusr.com/2/AAEIABACGAAgp-iRzwUojqGa9AQwhgQ40Ag.jpg' alt='' /></a></div><div class='f-mobiModel'><div class='fk-mobiWin'></div><a class='f-mobiModelUrl' href='//fkfz69.faisco.cn' target='_blank' hidefocus='true' title='点击查看模板网站，可以一键复制整个网站' ref='nofollow'><img class='f-mobiModelImg' src='http://d1.faiusr.com/2/AAEIABACGAAgytPH0QUoyu-t5QcwyAE45AI.jpg' alt='' /></a></div></div></div><div class='fk-modelPreForm'><div class='f-modelPreInnerForm'><div class='fk-websiteWin'></div><div class='f-pcModel'><a class='f-pcModelUrl' href='//fkmaoyi24.faisco.cn' target='_blank' hidefocus='true' title='点击查看模板网站，可以一键复制整个网站' ref='nofollow'><img class='f-pcModelImg' src='http://d1.faiusr.com/2/AAEIABACGAAg4_eRzwUokMOOrwYwhgQ4hgo.jpg' alt='' /></a></div><div class='f-mobiModel'><div class='fk-mobiWin'></div><a class='f-mobiModelUrl' href='//fkmaoyi24.faisco.cn' target='_blank' hidefocus='true' title='点击查看模板网站，可以一键复制整个网站' ref='nofollow'><img class='f-mobiModelImg' src='http://d1.faiusr.com/2/AAEIABACGAAgubLC0QUo1b-VsQIwyAE45AI.jpg' alt='' /></a></div></div></div><div class='fk-modelPreForm'><div class='f-modelPreInnerForm'><div class='fk-websiteWin'></div><div class='f-pcModel'><a class='f-pcModelUrl' href='//fkgg34.faisco.cn' target='_blank' hidefocus='true' title='点击查看模板网站，可以一键复制整个网站' ref='nofollow'><img class='f-pcModelImg' src='http://d1.faiusr.com/2/AAEIABACGAAgt7ORzwUokqS4zgIwhgQ42g0.jpg' alt='' /></a></div><div class='f-mobiModel'><div class='fk-mobiWin'></div><a class='f-mobiModelUrl' href='//fkgg34.faisco.cn' target='_blank' hidefocus='true' title='点击查看模板网站，可以一键复制整个网站' ref='nofollow'><img class='f-mobiModelImg' src='http://d1.faiusr.com/2/AAEIABACGAAg042j0QUoss7SsAUwyAE45AI.jpg' alt='' /></a></div></div></div><div class='fk-modelPreForm'><div class='f-modelPreInnerForm'><div class='fk-websiteWin'></div><div class='f-pcModel'><a class='f-pcModelUrl' href='//fkyuanlin17.faisco.cn' target='_blank' hidefocus='true' title='点击查看模板网站，可以一键复制整个网站' ref='nofollow'><img class='f-pcModelImg' src='http://d1.faiusr.com/2/AAEIABACGAAgw8eRzwUoj-eTrAQwhgQ4-Qc.jpg' alt='' /></a></div><div class='f-mobiModel'><div class='fk-mobiWin'></div><a class='f-mobiModelUrl' href='//fkyuanlin17.faisco.cn' target='_blank' hidefocus='true' title='点击查看模板网站，可以一键复制整个网站' ref='nofollow'><img class='f-mobiModelImg' src='http://d1.faiusr.com/2/AAEIABACGAAg4p7D0QUozqr9wwMwyAE45AI.jpg' alt='' /></a></div></div></div><div class='fk-modelPreForm'><div class='f-modelPreInnerForm'><div class='fk-websiteWin'></div><div class='f-pcModel'><a class='f-pcModelUrl' href='//fkit69.faisco.cn' target='_blank' hidefocus='true' title='点击查看模板网站，可以一键复制整个网站' ref='nofollow'><img class='f-pcModelImg' src='http://d1.faiusr.com/2/AAEIABACGAAgvcLLzwUosKjlvQIwhgQ4iAs.jpg' alt='' /></a></div><div class='f-mobiModel'><div class='fk-mobiWin'></div><a class='f-mobiModelUrl' href='//fkit69.faisco.cn' target='_blank' hidefocus='true' title='点击查看模板网站，可以一键复制整个网站' ref='nofollow'><img class='f-mobiModelImg' src='http://d1.faiusr.com/2/AAEIABACGAAgrpLC0QUox73nbDDIATjkAg.jpg' alt='' /></a></div></div></div><div class='fk-modelPreForm'><div class='f-modelPreInnerForm'><div class='fk-websiteWin'></div><div class='f-pcModel'><a class='f-pcModelUrl' href='//fkjzjc27.faisco.cn' target='_blank' hidefocus='true' title='点击查看模板网站，可以一键复制整个网站' ref='nofollow'><img class='f-pcModelImg' src='http://d1.faiusr.com/2/AAEIABACGAAg18SgzwUokLenhAUwhgQ42g0.jpg' alt='' /></a></div><div class='f-mobiModel'><div class='fk-mobiWin'></div><a class='f-mobiModelUrl' href='//fkjzjc27.faisco.cn' target='_blank' hidefocus='true' title='点击查看模板网站，可以一键复制整个网站' ref='nofollow'><img class='f-mobiModelImg' src='http://d1.faiusr.com/2/AAEIABACGAAg28SgzwUo0LL1gAEwyAE45AI.jpg' alt='' /></a></div></div></div>
-	        
-           	</div>		
-           	<div id='modelListLoading' class='fkjz-loading bg leftClose' style='display: block;'><div class='spinner'><div class='spinner-container container1'><div class='circle1'></div><div class='circle2'></div><div class='circle3'></div><div class='circle4'></div></div><div class='spinner-container container2'><div class='circle1'></div><div class='circle2'></div><div class='circle3'></div><div class='circle4'></div></div><div class='spinner-container container3'><div class='circle1'></div><div class='circle2'></div><div class='circle3'></div><div class='circle4'></div></div></div><div class='loadTxt'>玩命加载中......</div></div>
-            <div class="clear"></div>
-        </div>
-        
     </div>
+</div>
 
+<div id="c" class="webCase">
+    <div class="fk-slider" id="webTplSlider">
+        <div class="f-slider-wrap J_wrap">
+            <div class="f-slider-item one J_item">
+                <!-- PC content-->
+                <div id="PCContent" class="casePC caseItem show">
+                    <div class="caseContent">
+                        <div class="caseConMiddle">
+                            <div class="caseConList fk-pcCaseList" id="pcCaseList">
+                                <div class='caseForm'><div class='fk-casePc-formWrap fk-casePc-formWrapHover'><div class='f-casePc-form'><div class='f-winBg'></div><div class='f-win'><img src='http://d1.faiusr.com/2/AAEIABACGAAgn4eCzgUowPOh2QMwhgQ43wg.jpg' class='f-win-img'></div><div class='f-winMask'><a href='http://www.esenbol.com' target='_blank' title='' class='f-link-preview'  rel='nofollow'><div class='f-link-previewBg'></div><div class='f-icon-preview'></div></a></div></div></div><div class='caseText'><h3 class='caseText-title ellipsis'><a hidefocus='true' class='caseCompanyName' title='果然新鲜' href='http://www.esenbol.com' target='_blank' rel='nofollow'>果然新鲜</a></h3><p class='caseText-desc'>所属行业：食品、茶饮、养生保健</p></div></div><div class='caseForm'><div class='fk-casePc-formWrap fk-casePc-formWrapHover'><div class='f-casePc-form'><div class='f-winBg'></div><div class='f-win'><img src='http://d1.faiusr.com/2/AAEIABACGAAgxYGCzgUopPL_ngUwhgQ40wg.jpg' class='f-win-img'></div><div class='f-winMask'><a href='http://www.longerservices.com' target='_blank' title='' class='f-link-preview'  rel='nofollow'><div class='f-link-previewBg'></div><div class='f-icon-preview'></div></a></div></div></div><div class='caseText'><h3 class='caseText-title ellipsis'><a hidefocus='true' class='caseCompanyName' title='朗格服务' href='http://www.longerservices.com' target='_blank' rel='nofollow'>朗格服务</a></h3><p class='caseText-desc'>所属行业：教育、政府、机构组织</p></div></div><div class='caseForm'><div class='fk-casePc-formWrap fk-casePc-formWrapHover'><div class='f-casePc-form'><div class='f-winBg'></div><div class='f-win'><img src='http://d1.faiusr.com/2/AAEIABACGAAg1fWBzgUozrziwAMwhgQ4vQc.jpg' class='f-win-img'></div><div class='f-winMask'><a href='http://sdhouqing.com' target='_blank' title='' class='f-link-preview'  rel='nofollow'><div class='f-link-previewBg'></div><div class='f-icon-preview'></div></a></div></div></div><div class='caseText'><h3 class='caseText-title ellipsis'><a hidefocus='true' class='caseCompanyName' title='尚品五金' href='http://sdhouqing.com' target='_blank' rel='nofollow'>尚品五金</a></h3><p class='caseText-desc'>所属行业：五金、设备、工业制品</p></div></div><div class='caseForm'><div class='fk-casePc-formWrap fk-casePc-formWrapHover'><div class='f-casePc-form'><div class='f-winBg'></div><div class='f-win'><img src='http://d1.faiusr.com/2/AAEIABACGAAg6YeCzgUovLyKPTCGBDiCAg.jpg' class='f-win-img'></div><div class='f-winMask'><a href='http://www.gelinzhaoyi.com' target='_blank' title='' class='f-link-preview'  rel='nofollow'><div class='f-link-previewBg'></div><div class='f-icon-preview'></div></a></div></div></div><div class='caseText'><h3 class='caseText-title ellipsis'><a hidefocus='true' class='caseCompanyName' title='格林兆亿（北京）商贸有限公司' href='http://www.gelinzhaoyi.com' target='_blank' rel='nofollow'>格林兆亿（北京）商贸有限公司</a></h3><p class='caseText-desc'>所属行业：食品、茶饮、养生保健</p></div></div><div class='caseForm'><div class='fk-casePc-formWrap fk-casePc-formWrapHover'><div class='f-casePc-form'><div class='f-winBg'></div><div class='f-win'><img src='http://d1.faiusr.com/2/AAEIABACGAAgjYmCzgUo0pyDugIwhgQ4-Qc.jpg' class='f-win-img'></div><div class='f-winMask'><a href='http://www.gzrppet.com' target='_blank' title='' class='f-link-preview'  rel='nofollow'><div class='f-link-previewBg'></div><div class='f-icon-preview'></div></a></div></div></div><div class='caseText'><h3 class='caseText-title ellipsis'><a hidefocus='true' class='caseCompanyName' title='广州瑞派宠物医院管理有限公司' href='http://www.gzrppet.com' target='_blank' rel='nofollow'>广州瑞派宠物医院管理有限公司</a></h3><p class='caseText-desc'>所属行业：婚庆、摄影、生活服务</p></div></div><div class='caseForm'><div class='fk-casePc-formWrap fk-casePc-formWrapHover'><div class='f-casePc-form'><div class='f-winBg'></div><div class='f-win'><img src='http://d1.faiusr.com/2/AAEIABACGAAggoKCzgUov5q_kQUwhgQ4vwk.jpg' class='f-win-img'></div><div class='f-winMask'><a href='http://www.icnianicnian.com' target='_blank' title='' class='f-link-preview'  rel='nofollow'><div class='f-link-previewBg'></div><div class='f-icon-preview'></div></a></div></div></div><div class='caseText'><h3 class='caseText-title ellipsis'><a hidefocus='true' class='caseCompanyName' title='学诚教育' href='http://www.icnianicnian.com' target='_blank' rel='nofollow'>学诚教育</a></h3><p class='caseText-desc'>所属行业：教育、政府、机构组织</p></div></div>
+                            </div>
+                            <div class="clear"></div>
+                            <div id="pcCaseListLoading" class="fkjz-loading bg leftClose" style="display: block;">
+                                <div class="spinner">
+                                    <div class="spinner-container container1">
+                                        <div class="circle1"></div>
+                                        <div class="circle2"></div>
+                                        <div class="circle3"></div>
+                                        <div class="circle4"></div>
+                                    </div>
+                                    <div class="spinner-container container2">
+                                        <div class="circle1"></div>
+                                        <div class="circle2"></div>
+                                        <div class="circle3"></div>
+                                        <div class="circle4"></div>
+                                    </div>
+                                    <div class="spinner-container container3">
+                                        <div class="circle1"></div>
+                                        <div class="circle2"></div>
+                                        <div class="circle3"></div>
+                                        <div class="circle4"></div>
+                                    </div>
+                                </div>
+                                <div class="loadTxt">玩命加载中......</div>
+                            </div>
+                        </div>
+                        <div class="caseConBottom"></div>
+                    </div>
+                </div>
+                <!-- PC content end-->
+            </div>
+            <div class="f-slider-item two J_item">
+                <!-- mobi content-->
+                <div id="mobiContent" class="caseMobi caseItem  show">
+                    <div class="caseMobiContent">
+                        <div class="caseMobiContent caseMobiContent-mobiIframe">
+                            <div class="f-listWrap-mobiCase">
+                                <div class="f-list f-list-mobicase" id="mobiCaseList"> 
+                                    <div class='f-item'><div class='fk-caseForm'><div class='f-caseWrap'><div class='fk-index-mobiArea fk-index-mobiAreaHover'><div class='fk-index-mobiPlaceholder'><div class='fk-index-caseForm'><div class='f-phone-template'></div><div class='f-screen fk-index-screenHover'><a  href='http://m.lhalaw.icoc.cc' target='_blank' title='' class='f-screen-link' rel='nofollow'><img src='http://d1.faiusr.com/2/AAEIABACGAAgxOKe0QUovtHE1wcwwAI4ugQ.jpg' class='f-screen-img'></a><div class='f-screenMask'></div><div class='f-screen-contentWrap'><div class='f-qrCode'><img class='f-qrCodeImg' src='mobi_qrcode.jsp?URL=http://m.lhalaw.icoc.cc'></div><a class='f-btn-preview' href='http://m.lhalaw.icoc.cc' target='_blank' rel='nofollow'><span class='f-vNode'></span><i class='fkIcon-preview'></i><span class='f-txt'>预览</span></a></div></div></div></div></div><div class='f-caseInfo'><div class='f-caseTtitle'><a hidefocus='true' href='http://m.lhalaw.icoc.cc' target='_blank' class='f-link'  rel='nofollow'>永和法律网</a></div><div class='f-caseProp'>所属行业：金融、物流、工商服务</div></div></div></div></div><div class='f-item'><div class='fk-caseForm'><div class='f-caseWrap'><div class='fk-index-mobiArea fk-index-mobiAreaHover'><div class='fk-index-mobiPlaceholder'><div class='fk-index-caseForm'><div class='f-phone-template'></div><div class='f-screen fk-index-screenHover'><a  href='http://m.ahrjinrong.icoc.cc' target='_blank' title='' class='f-screen-link' rel='nofollow'><img src='http://d1.faiusr.com/2/AAEIABACGAAg0NKi0QUogNTuuQUwyAE45AI.jpg' class='f-screen-img'></a><div class='f-screenMask'></div><div class='f-screen-contentWrap'><div class='f-qrCode'><img class='f-qrCodeImg' src='mobi_qrcode.jsp?URL=http://m.ahrjinrong.icoc.cc'></div><a class='f-btn-preview' href='http://m.ahrjinrong.icoc.cc' target='_blank' rel='nofollow'><span class='f-vNode'></span><i class='fkIcon-preview'></i><span class='f-txt'>预览</span></a></div></div></div></div></div><div class='f-caseInfo'><div class='f-caseTtitle'><a hidefocus='true' href='http://m.ahrjinrong.icoc.cc' target='_blank' class='f-link'  rel='nofollow'>利牛金融</a></div><div class='f-caseProp'>所属行业：金融、物流、工商服务</div></div></div></div></div><div class='f-item'><div class='fk-caseForm'><div class='f-caseWrap'><div class='fk-index-mobiArea fk-index-mobiAreaHover'><div class='fk-index-mobiPlaceholder'><div class='fk-index-caseForm'><div class='f-phone-template'></div><div class='f-screen fk-index-screenHover'><a  href='http://m.lhtrade.icoc.cc' target='_blank' title='' class='f-screen-link' rel='nofollow'><img src='http://d1.faiusr.com/2/AAEIABACGAAgptWi0QUo1fXqygcwyAE45AI.jpg' class='f-screen-img'></a><div class='f-screenMask'></div><div class='f-screen-contentWrap'><div class='f-qrCode'><img class='f-qrCodeImg' src='mobi_qrcode.jsp?URL=http://m.lhtrade.icoc.cc'></div><a class='f-btn-preview' href='http://m.lhtrade.icoc.cc' target='_blank' rel='nofollow'><span class='f-vNode'></span><i class='fkIcon-preview'></i><span class='f-txt'>预览</span></a></div></div></div></div></div><div class='f-caseInfo'><div class='f-caseTtitle'><a hidefocus='true' href='http://m.lhtrade.icoc.cc' target='_blank' class='f-link'  rel='nofollow'>广州华然商贸有限公司</a></div><div class='f-caseProp'>所属行业：金融、物流、工商服务</div></div></div></div></div><div class='f-item'><div class='fk-caseForm'><div class='f-caseWrap'><div class='fk-index-mobiArea fk-index-mobiAreaHover'><div class='fk-index-mobiPlaceholder'><div class='fk-index-caseForm'><div class='f-phone-template'></div><div class='f-screen fk-index-screenHover'><a  href='http://m.wawedding.icoc.cc' target='_blank' title='' class='f-screen-link' rel='nofollow'><img src='http://d1.faiusr.com/2/AAEIABACGAAgmt2e0QUogLXwcDDIATjkAg.jpg' class='f-screen-img'></a><div class='f-screenMask'></div><div class='f-screen-contentWrap'><div class='f-qrCode'><img class='f-qrCodeImg' src='mobi_qrcode.jsp?URL=http://m.wawedding.icoc.cc'></div><a class='f-btn-preview' href='http://m.wawedding.icoc.cc' target='_blank' rel='nofollow'><span class='f-vNode'></span><i class='fkIcon-preview'></i><span class='f-txt'>预览</span></a></div></div></div></div></div><div class='f-caseInfo'><div class='f-caseTtitle'><a hidefocus='true' href='http://m.wawedding.icoc.cc' target='_blank' class='f-link'  rel='nofollow'>唯爱婚纱</a></div><div class='f-caseProp'>所属行业：婚庆、摄影、生活服务</div></div></div></div></div><div class='f-item'><div class='fk-caseForm'><div class='f-caseWrap'><div class='fk-index-mobiArea fk-index-mobiAreaHover'><div class='fk-index-mobiPlaceholder'><div class='fk-index-caseForm'><div class='f-phone-template'></div><div class='f-screen fk-index-screenHover'><a  href='http://m.guoranxinxian.icoc.cc' target='_blank' title='' class='f-screen-link' rel='nofollow'><img src='http://d1.faiusr.com/2/AAEIABACGAAg0Nme0QUoz-qnlgEwyAE45AI.jpg' class='f-screen-img'></a><div class='f-screenMask'></div><div class='f-screen-contentWrap'><div class='f-qrCode'><img class='f-qrCodeImg' src='mobi_qrcode.jsp?URL=http://m.guoranxinxian.icoc.cc'></div><a class='f-btn-preview' href='http://m.guoranxinxian.icoc.cc' target='_blank' rel='nofollow'><span class='f-vNode'></span><i class='fkIcon-preview'></i><span class='f-txt'>预览</span></a></div></div></div></div></div><div class='f-caseInfo'><div class='f-caseTtitle'><a hidefocus='true' href='http://m.guoranxinxian.icoc.cc' target='_blank' class='f-link'  rel='nofollow'>果然新鲜</a></div><div class='f-caseProp'>所属行业：食品、茶饮、养生保健</div></div></div></div></div><div class='f-item'><div class='fk-caseForm'><div class='f-caseWrap'><div class='fk-index-mobiArea fk-index-mobiAreaHover'><div class='fk-index-mobiPlaceholder'><div class='fk-index-caseForm'><div class='f-phone-template'></div><div class='f-screen fk-index-screenHover'><a  href='http://m.cwwujin.icoc.cc' target='_blank' title='' class='f-screen-link' rel='nofollow'><img src='http://d1.faiusr.com/2/AAEIABACGAAgg9Ge0QUo8JLB6wQwyAE45AI.jpg' class='f-screen-img'></a><div class='f-screenMask'></div><div class='f-screen-contentWrap'><div class='f-qrCode'><img class='f-qrCodeImg' src='mobi_qrcode.jsp?URL=http://m.cwwujin.icoc.cc'></div><a class='f-btn-preview' href='http://m.cwwujin.icoc.cc' target='_blank' rel='nofollow'><span class='f-vNode'></span><i class='fkIcon-preview'></i><span class='f-txt'>预览</span></a></div></div></div></div></div><div class='f-caseInfo'><div class='f-caseTtitle'><a hidefocus='true' href='http://m.cwwujin.icoc.cc' target='_blank' class='f-link'  rel='nofollow'>尚品五金</a></div><div class='f-caseProp'>所属行业：五金、设备、工业制品</div></div></div></div></div><div class='f-item'><div class='fk-caseForm'><div class='f-caseWrap'><div class='fk-index-mobiArea fk-index-mobiAreaHover'><div class='fk-index-mobiPlaceholder'><div class='fk-index-caseForm'><div class='f-phone-template'></div><div class='f-screen fk-index-screenHover'><a  href='http://m.rose89.icoc.cc' target='_blank' title='' class='f-screen-link' rel='nofollow'><img src='http://d1.faiusr.com/2/AAEIABACGAAg54yCzgUogLipFDDIATjkAg.jpg' class='f-screen-img'></a><div class='f-screenMask'></div><div class='f-screen-contentWrap'><div class='f-qrCode'><img class='f-qrCodeImg' src='mobi_qrcode.jsp?URL=http://m.rose89.icoc.cc'></div><a class='f-btn-preview' href='http://m.rose89.icoc.cc' target='_blank' rel='nofollow'><span class='f-vNode'></span><i class='fkIcon-preview'></i><span class='f-txt'>预览</span></a></div></div></div></div></div><div class='f-caseInfo'><div class='f-caseTtitle'><a hidefocus='true' href='http://m.rose89.icoc.cc' target='_blank' class='f-link'  rel='nofollow'>rose</a></div><div class='f-caseProp'>所属行业：食品、茶饮、养生保健</div></div></div></div></div><div class='f-item'><div class='fk-caseForm'><div class='f-caseWrap'><div class='fk-index-mobiArea fk-index-mobiAreaHover'><div class='fk-index-mobiPlaceholder'><div class='fk-index-caseForm'><div class='f-phone-template'></div><div class='f-screen fk-index-screenHover'><a  href='http://m.lismz.icoc.cc' target='_blank' title='' class='f-screen-link' rel='nofollow'><img src='http://d1.faiusr.com/2/AAEIABACGAAgv4WCzgUopLaA4gIwyAE45AI.jpg' class='f-screen-img'></a><div class='f-screenMask'></div><div class='f-screen-contentWrap'><div class='f-qrCode'><img class='f-qrCodeImg' src='mobi_qrcode.jsp?URL=http://m.lismz.icoc.cc'></div><a class='f-btn-preview' href='http://m.lismz.icoc.cc' target='_blank' rel='nofollow'><span class='f-vNode'></span><i class='fkIcon-preview'></i><span class='f-txt'>预览</span></a></div></div></div></div></div><div class='f-caseInfo'><div class='f-caseTtitle'><a hidefocus='true' href='http://m.lismz.icoc.cc' target='_blank' class='f-link'  rel='nofollow'>丽莎美妆</a></div><div class='f-caseProp'>所属行业：服装、饰品、个人护理</div></div></div></div></div>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                            <div id="mobiCaseListLoading" class="fkjz-loading bg leftClose" style="display: block;">
+                                <div class="spinner">
+                                    <div class="spinner-container container1">
+                                        <div class="circle1"></div>
+                                        <div class="circle2"></div>
+                                        <div class="circle3"></div>
+                                        <div class="circle4"></div>
+                                    </div>
+                                    <div class="spinner-container container2">
+                                        <div class="circle1"></div>
+                                        <div class="circle2"></div>
+                                        <div class="circle3"></div>
+                                        <div class="circle4"></div>
+                                    </div>
+                                    <div class="spinner-container container3">
+                                        <div class="circle1"></div>
+                                        <div class="circle2"></div>
+                                        <div class="circle3"></div>
+                                        <div class="circle4"></div>
+                                    </div>
+                                </div>
+                                <div class="loadTxt">玩命加载中......</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- mobi content end-->
+            </div>
+        </div>
+    </div>
 </div>
 
 <?php include template("content","footer"); ?>
