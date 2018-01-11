@@ -524,6 +524,7 @@ function template($module = 'content', $template = 'index', $style = '') {
 			showmessage('Template does not exist.'.DIRECTORY_SEPARATOR.$style.DIRECTORY_SEPARATOR.$module.DIRECTORY_SEPARATOR.$template.'.html');
 		}
 	}
+
 	return $compiledtplfile;
 }
 
@@ -708,7 +709,94 @@ function to_sqls($data, $front = ' AND ', $in_column = false) {
 		}
 	}
 }
-
+/**
+ * 分页函数
+ *
+ * @param $num 信息总数
+ * @param $curr_page 当前分页
+ * @param $perpage 每页显示数
+ * @param $urlrule URL规则
+ * @param $array 需要传递的数组，用于增加额外的方法
+ * @return 分页
+ */
+function member_pages($num, $curr_page, $perpage = 20, $urlrule = '', $array = array(),$setpages = 10) {
+	if(defined('URLRULE') && $urlrule == '') {
+		$urlrule = URLRULE;
+		$array = $GLOBALS['URL_ARRAY'];
+	} elseif($urlrule == '') {
+		$urlrule = url_par('page={$page}');
+	}
+	$multipage = '';
+	if($num > $perpage) {
+		$page = $setpages+1;
+		$offset = ceil($setpages/2-1);
+		$pages = ceil($num / $perpage);
+		if (defined('IN_ADMIN') && !defined('PAGES')) define('PAGES', $pages);
+		$from = $curr_page - $offset;
+		$to = $curr_page + $offset;
+		$more = 0;
+		if($page >= $pages) {
+			$from = 2;
+			$to = $pages-1;
+		} else {
+			if($from <= 1) {
+				$to = $page-1;
+				$from = 2;
+			}  elseif($to >= $pages) {
+				$from = $pages-($page-2);
+				$to = $pages-1;
+			}
+			$more = 1;
+		}
+		/*<div class="col-lg-6">
+        <div id="editable-sample_info" class="dataTables_info">Showing 1 to 2 of  entries</div>
+    </div>
+            <div class="col-lg-6">
+            <div class="dataTables_paginate paging_bootstrap pagination">
+                <ul>
+                    <li class="prev disabled"><a onclick="pagetion(1)">← Prev</a></li>
+                    <li class="prev disabled"><a onclick="pagetion(1)">First</a></li>              
+                        <li class="active"><a onclick="pagetion(1)">1</a></li>
+                                        <li class="next disabled"><a onclick="pagetion(1)">Last</a></li>
+                    <li class="next disabled"><a onclick="pagetion(1)">Next → </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>*/
+		$multipage .= '<div class="col-lg-6"><div id="editable-sample_info" class="dataTables_info">总共 '.$num.L('page_item').'记录</div></div>';
+		$multipage .= '<div class="col-lg-6"><div class="dataTables_paginate paging_bootstrap pagination"><ul>';
+		if($curr_page>0) {
+			$multipage .= '  <li class="prev "><a href="#" onclick="pagetion('.($curr_page-1).')" class="a1">'.L('previous').'</a><li>';
+			if($curr_page==1) {
+				$multipage .= ' <li class="prev "><a>1</a></li>';
+			} elseif($curr_page>6 && $more) {
+				$multipage .= '  <li class="prev "><a href="#" onclick="pagetion('.'1'.')">1</a><li>..';
+			} else {
+				$multipage .= '  <li class="prev "><a href="#" onclick="pagetion('.'1'.')">1</a><li>';
+			}
+		}
+		for($i = $from; $i <= $to; $i++) {
+			if($i != $curr_page) {
+				$multipage .= '  <li class="prev "><a  href="#" onclick="pagetion("'.$i.')">'.$i.'</a><li>';
+			} else {
+				$multipage .= ' <li class="active"><a>'.$i.'</a><li>';
+			}
+		}
+		if($curr_page<$pages) {
+			if($curr_page<$pages-5 && $more) {
+				$multipage .= ' .. <li class="prev "><a  href="#"onclick="pagetion('.$pages.')">'.$pages.'</a><li>  <li class="prev "><a onclick="pagetion('.($curr_page+1).')" class="a1">'.L('next').'</a><li>';
+			} else {
+				$multipage .= '  <li class="prev "><a href="#" onclick="pagetion('.$pages.')">'.$pages.'</a><li>  <li class="prev "><a onclick="pagetion('.($curr_page+1).')" class="a1">'.L('next').'</a><li>';
+			}
+		} elseif($curr_page==$pages) {
+			$multipage .= ' <li class="active "><a>'.$pages.'</a></li> <li class="prev "><a onclick="pagetion('.$curr_page.')" class="a1">'.L('next').'</a><li>';
+		} else {
+			$multipage .= '  <li class="prev "><a href="#" onclick="pagetion('.$pages.')">'.$pages.'</a> <li> <li class="prev "><a onclick="pagetion('.($curr_page+1).')" class="a1">'.L('next').'</a><li>';
+		}
+		$multipage.="</ul></div>";
+	}
+	return $multipage;
+}
 /**
  * 分页函数
  *

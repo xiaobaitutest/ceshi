@@ -1,0 +1,38 @@
+var marqueeContent=new Array(); 
+marqueeContent[0]="本站不收新站，每日来路达不到 15 请不要提交，否则不审核";
+marqueeContent[1]="私自下链一旦发现永久拉黑！"; 
+marqueeContent[2]="广告及合作请联系邮箱：daohanglm@gmail.com"; 
+marqueeContent[3]="本站永久地址：www.pornmax.club！"; 
+var marqueeInterval=new Array(); 
+var marqueeId=0; 
+var marqueeDelay=4000; 
+var marqueeHeight=36; 
+function initMarquee() { 
+    var str=marqueeContent[0]; 
+    document.write('<div id="marqueeBox" style="overflow:hidden;width:441px;height:'+marqueeHeight+'px" onmouseover="clearInterval(marqueeInterval[0])" onmouseout="marqueeInterval[0]=setInterval(\'startMarquee()\',marqueeDelay)"><div>'+str+'</div></div>'); 
+    marqueeId++; 
+    marqueeInterval[0]=setInterval("startMarquee()",marqueeDelay); 
+} 
+function startMarquee() { 
+    var str=marqueeContent[marqueeId]; 
+    marqueeId++; 
+    if(marqueeId>=marqueeContent.length) marqueeId=0; 
+    if(document.getElementById("marqueeBox").childNodes.length==1) { 
+    var nextLine=document.createElement('DIV'); 
+    nextLine.innerHTML=str; 
+    document.getElementById("marqueeBox").appendChild(nextLine); 
+    } 
+    else { 
+        document.getElementById("marqueeBox").childNodes[0].innerHTML=str; 
+        document.getElementById("marqueeBox").appendChild(document.getElementById("marqueeBox").childNodes[0]); 
+        document.getElementById("marqueeBox").scrollTop=0; 
+    } 
+    clearInterval(marqueeInterval[1]); 
+    marqueeInterval[1]=setInterval("scrollMarquee()",20); 
+} 
+function scrollMarquee() { 
+    document.getElementById("marqueeBox").scrollTop++; 
+    if(document.getElementById("marqueeBox").scrollTop%marqueeHeight==(marqueeHeight-1)){ 
+    clearInterval(marqueeInterval[1]); 
+    } 
+} 

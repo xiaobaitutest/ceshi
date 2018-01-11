@@ -1,0 +1,206 @@
+#list .table thead>tr>th, #list .table tbody>tr>th, #list .table tfoot>tr>th, #list .table thead>tr>td, #list .table tbody>tr>td, #list .table tfoot>tr>td {
+  vertical-align: middle;
+}
+
+table:not(.table-condensed)>thead>tr>td, table:not(.table-condensed)>thead>tr>th {
+  background-color: #f9f9f9;
+}
+
+table:not(.table-condensed) tbody tr td, table:not(.table-condensed) tbody tr th {
+  background-color: transparent !important;
+}
+
+table:not(.table-condensed)>thead>tr>td, table:not(.table-condensed)>thead>tr>th, table:not(.table-condensed) tbody tr td, table:not(.table-condensed) tbody tr th {
+  border: 1px solid #ddd !important;
+}
+
+table:not(.table-condensed) tr td a {
+  cursor: pointer;
+}
+
+.ajax-file-upload-statusbar {
+  width: 100% !important;
+  padding: 5px !important;
+  margin-left: 0 !important;
+}
+
+.ajax-file-upload-filename {
+  font-size: 11px;
+}
+
+.panel-body table tr td img {
+  width: 100px;
+  height: auto;
+}
+
+.panel-body .table_content {
+  overflow-x: auto;
+}
+
+#peiebox b {
+  word-break: break-all;
+}
+
+.btn-hide {
+  display: none;
+}
+
+.news_list {
+  box-sizing: border-box;
+  border: 1px #e2e2e2 solid;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.news_list .nav {
+  border-bottom: 1px #e2e2e2 solid;
+  line-height: 36px;
+  background: #f2f2f2;
+  padding: 0 20px;
+  color: #666;
+}
+
+.news_list .nav .more {
+  text-decoration: none;
+  float: right;
+  font-size: 14px;
+}
+
+.news_list .nav .more:hover {
+  color: #65CEA7;
+}
+
+.news_list .list {
+  padding: 10px 20px;
+}
+
+.news_list ul {
+  list-style: none;
+  width: 100%;
+  padding: 0;
+  display: inline-block;
+  margin: 0;
+}
+
+.news_list .list ul li {
+  width: 100%;
+  list-style: circle;
+  line-height: 30px;
+  font-size: 14px;
+  border-bottom: 1px #e2e2e2 dashed;
+  color: #999;
+  display: inline-block;
+  padding: 5px 0;
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.news_list .list ul li a {
+  color: #666;
+  text-decoration: none;
+}
+
+.news_list .list ul li a:hover {
+  color: #65CEA7;
+  cursor: pointer;
+}
+
+.news_list .list ul li span.news_date {
+  color: #999;
+  font-size: 12px;
+  float: right;
+  margin-right: 20px;
+}
+
+.manpage .panel .panel-body .col-md-12 .form-group span {
+  color: #65CEA7
+}
+
+.custom-nav .sub-menu-list>li>a.active {
+  color: #65CEA7;
+}
+
+.bottombar {
+  width: 100%;
+  background-color: #65CEA7;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.notification-menu .dropdown-menu-usermenu {
+  min-width: 100%;
+  margin-right: 0 !important;
+}
+.modal-dialog .modal-body form .form-group:first-of-type{
+  margin-top:10px;
+}
+@media screen and (max-width: 768px) {
+  .notification-menu .dropdown-toggle .role {
+    font-size: 11px;
+    position: absolute;
+    bottom: -8px;
+    left: 4px;
+  }
+  .sticky-header .menu-right {
+    margin-right: 0;
+  }
+  .notification-menu {
+    /*overflow: hidden;*/
+    margin: 0;
+    padding: 0;
+  }
+  .notification-menu .info-number {
+    padding: 12px 0;
+  }
+  .searchform input {
+    width: 135px;
+  }
+  .panel-body {
+    overflow-x: auto;
+  }
+  .panel-body table tr th, td {
+    word-break: keep-all;
+    white-space: nowrap;
+  }
+  #form .col-sm-10 {
+    float: left !important;
+    padding: 0;
+  }
+  .dataTables_paginate.paging_bootstrap.pagination {
+    float: none;
+  }
+  .dataTables_paginate.paging_bootstrap.pagination ul {
+    overflow: hidden;
+    padding: 0;
+  }
+  .dataTables_paginate.paging_bootstrap.pagination ul li {
+    margin-bottom: 10px;
+  }
+  .dataTables_paginate.paging_bootstrap.pagination ul li a {
+    padding: 5px 8px;
+  }
+  .modal-dialog {
+    width: 100% !important;
+    margin: 0;
+  }
+  #select_list #form .form-group select {
+    margin-top: 7px;
+  }
+  #bt_chaptchar {
+    margin-top: 7px;
+  }
+  input[name='endtime'] {
+    margin-top: 10px;
+  }
+  .news_list .list ul li span {
+    width: 100%;
+    display: block;
+  }
+}

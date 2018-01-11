@@ -1,5 +1,4 @@
 <?php
-
 return array (
 	'default' => array (
 		'hostname' => 'localhost',
@@ -15,5 +14,4 @@ return array (
 		'autoconnect' => 0
 		),
 );
-
 ?>

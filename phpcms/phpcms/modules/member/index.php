@@ -38,6 +38,174 @@ class index extends foreground {
 		$memberinfo['groupname'] = $grouplist[$memberinfo[groupid]]['name'];
 		include template('member', 'vip_list');
 	}
+	public function mobile_register() {
+		$this->_session_start();
+		//获取用户siteid
+		$siteid = isset($_REQUEST['siteid']) && trim($_REQUEST['siteid']) ? intval($_REQUEST['siteid']) : 1;
+		//定义站点id常量
+		if (!defined('SITEID')) {
+		   define('SITEID', $siteid);
+		}
+		
+		//加载用户模块配置
+		$member_setting = getcache('member_setting');
+		if(!$member_setting['allowregister']) {
+			$array=array();
+			$array['status']=1;
+			$array['msg']='不允许注册改网站';
+			echo  json_encode($array);die();
+		}
+		//加载短信模块配置
+ 		$sms_setting_arr = getcache('sms','sms');
+		$sms_setting = $sms_setting_arr[$siteid];		
+		$_POST['code']=1;
+		$_POST['username']='xiaobai1';
+		$_POST['password']='ddd';
+		$_POST['re_password']='ddd';
+		$_POST['dosubmit']='1';
+		
+		header("Cache-control: private");
+		if(isset($_POST['dosubmit'])) {
+			if ((empty($_SESSION['connectid']) && $_SESSION['code'] != strtolower($_POST['code']) && $_POST['code']!==NULL) || empty($_SESSION['code'])) {
+				$array['status']=1;
+				$array['msg']='验证码错误';
+				//echo  json_encode($array);die();
+			} else {
+				$_SESSION['code'] = '';
+			}
+			
+			$userinfo = array();
+			$userinfo['encrypt'] = create_randomstr(6);
+			if(!isset($_POST['username']) || !is_username($_POST['username'])){
+				$array['status']=1;
+				$array['msg']='用户名格式不正确';
+				echo  json_encode($array);die();
+			}
+			$userinfo['username'] = $_POST['username'];
+			$userinfo['nickname'] = '';
+			$userinfo['email'] ='';
+			if(!isset($_POST['password']) || empty($_POST['password'])){
+				$array['status']=1;
+				$array['msg']='密码格式不正确';
+				echo  json_encode($array);die();
+			}
+			if($_POST['password'] != $_POST['re_password']){
+				$array['status']=1;
+				$array['msg']='两次密码不一致';
+				echo  json_encode($array);die();
+			}
+			
+			$userinfo['password'] = $_POST['password'];
+			$userinfo['email'] = (isset($_POST['email']) && is_email($_POST['email'])) ? $_POST['email'] :'';
+			$userinfo['modelid'] = isset($_POST['modelid']) ? intval($_POST['modelid']) : 10;
+			$userinfo['regip'] = ip();
+			$userinfo['point'] = $member_setting['defualtpoint'] ? $member_setting['defualtpoint'] : 0;
+			$userinfo['amount'] = $member_setting['defualtamount'] ? $member_setting['defualtamount'] : 0;
+			$userinfo['regdate'] = $userinfo['lastdate'] = SYS_TIME;
+			$userinfo['siteid'] = $siteid;
+			$userinfo['connectid'] = isset($_SESSION['connectid']) ? $_SESSION['connectid'] : '';
+			$userinfo['from'] = isset($_SESSION['from']) ? $_SESSION['from'] : '';
+			
+			//手机强制验证
+			if($member_setting[mobile_checktype]=='1'){
+				//取用户手机号
+				$mobile_verify = $_POST['mobile_verify'] ? intval($_POST['mobile_verify']) : '';
+				if($mobile_verify=='') showmessage('请提供正确的手机验证码！', HTTP_REFERER);
+ 				$sms_report_db = pc_base::load_model('sms_report_model');
+				$posttime = SYS_TIME-360;
+				$where = "`id_code`='$mobile_verify' AND `posttime`>'$posttime'";
+				$r = $sms_report_db->get_one($where,'*','id DESC');
+ 				if(!empty($r)){
+					$userinfo['mobile'] = $r['mobile'];
+				}else{
+					$array['status']=1;
+				$array['msg']='两次密码不一致';
+				echo  json_encode($array);die();
+					showmessage('未检测到正确的手机号码！', HTTP_REFERER);
+				}
+ 			}elseif($member_setting[mobile_checktype]=='2'){
+				//获取验证码，直接通过POST，取mobile值
+				$userinfo['mobile'] = isset($_POST['mobile']) ? $_POST['mobile'] : '';
+			} 
+			if($userinfo['mobile']!=""){
+				if(!preg_match('/^1([0-9]{10})$/',$userinfo['mobile'])) {
+					$array['status']=1;
+					$array['msg']='请提供正确的手机号码！';
+					echo  json_encode($array);die();
+				}
+			} 
+ 			unset($_SESSION['connectid'], $_SESSION['from']);
+			
+			if($member_setting['enablemailcheck']) {	//是否需要邮件验证
+				$userinfo['groupid'] = 7;
+			} elseif($member_setting['registerverify']) {	//是否需要管理员审核
+				$modelinfo_str = $userinfo['modelinfo'] = isset($_POST['info']) ? array2string(array_map("safe_replace", new_html_special_chars($_POST['info']))) : '';
+				$this->verify_db = pc_base::load_model('member_verify_model');
+				unset($userinfo['lastdate'],$userinfo['connectid'],$userinfo['from']);
+				$userinfo['modelinfo'] = $modelinfo_str;
+				$this->verify_db->insert($userinfo);
+				showmessage(L('operation_success'), 'index.php?m=member&c=index&a=register&t=3');
+			} else {
+				//查看当前模型是否开启了短信验证功能
+				$model_field_cache = getcache('model_field_'.$userinfo['modelid'],'model');
+				if(isset($model_field_cache['mobile']) && $model_field_cache['mobile']['disabled']==0) {
+					$mobile = $_POST['info']['mobile'];
+					if(!preg_match('/^1([0-9]{10})$/',$mobile)) showmessage(L('input_right_mobile'));
+					$sms_report_db = pc_base::load_model('sms_report_model');
+					$posttime = SYS_TIME-300;
+					$where = "`mobile`='$mobile' AND `posttime`>'$posttime'";
+					$r = $sms_report_db->get_one($where);
+					if(!$r || $r['id_code']!=$_POST['mobile_verify']) showmessage(L('error_sms_code'));
+				}
+				$userinfo['groupid'] = $this->_get_usergroup_bypoint($userinfo['point']);
+			}
+			//附表信息验证 通过模型获取会员信息
+			if($member_setting['choosemodel']) {
+				require_once CACHE_MODEL_PATH.'member_input.class.php';
+		        require_once CACHE_MODEL_PATH.'member_update.class.php';
+				$member_input = new member_input($userinfo['modelid']);		
+				$_POST['info'] = array_map('new_html_special_chars',$_POST['info']);
+				$user_model_info = $member_input->get($_POST['info']);				        				
+			}
+	
+			//传入phpsso为明文密码，加密后存入phpcms_v9
+			$password = $userinfo['password'];
+			$userinfo['password'] = password($userinfo['password'], $userinfo['encrypt']);
+			$r = $this->db->get_one(array('username'=>$userinfo['username']));
+			if($r) {
+				$array['status']=1;
+				$array['msg']='用户名已经存在';
+				echo  json_encode($array);die();
+			}
+			$userid = $this->db->insert($userinfo, 1);
+			if($member_setting['choosemodel']) {	//如果开启选择模型
+				$user_model_info['userid'] = $userid;
+				//插入会员模型数据
+				$this->db->set_model($userinfo['modelid']);
+				$this->db->insert($user_model_info);
+			}
+					
+			if($userid > 0) {
+				if(!$cookietime) $get_cookietime = param::get_cookie('cookietime');
+				$_cookietime = $cookietime ? intval($cookietime) : ($get_cookietime ? $get_cookietime : 0);
+				$cookietime = $_cookietime ? TIME + $_cookietime : 0;
+				$phpcms_auth = sys_auth($userid."\t".$userinfo['password'], 'ENCODE', get_auth_key('login'));	
+				param::set_cookie('auth', $phpcms_auth, $cookietime);
+				param::set_cookie('_userid', $userid, $cookietime);
+				param::set_cookie('_username', $userinfo['username'], $cookietime);
+				param::set_cookie('_nickname', $userinfo['nickname'], $cookietime);
+				param::set_cookie('_groupid', $userinfo['groupid'], $cookietime);
+				param::set_cookie('cookietime', $_cookietime, $cookietime);
+				$array['status']=0;
+				$array['msg']='注册成功';
+				echo  json_encode($array);die();
+			}else{
+				$array['status']=0;
+				$array['msg']='注册失败';
+				echo  json_encode($array);die();
+			}
+		} 
+	}
 	public function register() {
 		$this->_session_start();
 		//获取用户siteid
@@ -206,7 +374,6 @@ class index extends foreground {
 			if(!pc_base::load_config('system', 'phpsso')) {
 				showmessage(L('enable_register').L('enable_phpsso'), 'index.php?m=member&c=index&a=login');
 			}
-			
 			if(!empty($_GET['verify'])) {
 				$code = isset($_GET['code']) ? trim($_GET['code']) : showmessage(L('operation_failure'), 'index.php?m=member&c=index');
 				$code_res = sys_auth($code, 'DECODE', get_auth_key('email'));
@@ -600,7 +767,119 @@ class index extends foreground {
 			include template('member', 'account_manage_upgrade');
 		}
 	}
-	
+	public function master_login() {
+		$this->_session_start();
+		//获取用户siteid
+		$siteid = isset($_REQUEST['siteid']) && trim($_REQUEST['siteid']) ? intval($_REQUEST['siteid']) : 1;
+		//定义站点id常量
+		if (!defined('SITEID')) {
+		   define('SITEID', $siteid);
+		}
+		$username=$_POST['username'];
+		$password=$_POST['password'];
+		if(isset($_POST['dosubmit'])) {
+				$code = isset($_POST['code']) && trim($_POST['code']) ? trim($_POST['code']) : '';
+				if ($_SESSION['code'] != strtolower($code)) {
+					$_SESSION['code'] = '';
+					$array=array();
+					$array['status']=1;
+					$array['msg']='验证码错误';
+					echo  json_encode($array);die();
+				}
+				//密码错误剩余重试次数
+				$this->times_db = pc_base::load_model('times_model');
+				$rtime = $this->times_db->get_one(array('username'=>$username));
+				if($rtime['times'] > 8) {
+					$minute = 60 - floor((SYS_TIME - $rtime['logintime']) / 60);
+					$array=array();
+					$array['status']=1;
+					$array['msg']='登陆失败，尝试次数过多';
+					echo  json_encode($array);die();
+				}		
+				//查询帐号
+				$r = $this->db->get_one(array('username'=>$username));
+				if(!$r) {
+					$array['status']=1;
+					$array['msg']='用户不存在';
+					echo  json_encode($array);die();
+				}
+				//验证用户密码
+				$password = md5(md5(trim($password)).$r['encrypt']);
+				if($r['password'] != $password) {				
+					$ip = ip();
+					if($rtime && $rtime['times'] < 5) {
+						$times = 5 - intval($rtime['times']);
+						$this->times_db->update(array('ip'=>$ip, 'times'=>'+=1'), array('username'=>$username));
+					} else {
+						$this->times_db->insert(array('username'=>$username, 'ip'=>$ip, 'logintime'=>SYS_TIME, 'times'=>1));
+						$times = 5;
+					}
+					$array['status']=1;
+					$array['msg']='密码错误！';
+					echo  json_encode($array);die();
+				}
+				$this->times_db->delete(array('username'=>$username));
+		
+				//如果用户被锁定
+				if($r['islock']) {
+					$array['status']=1;
+					$array['msg']='用户被锁定';
+					echo  json_encode($array);die();
+				}
+				
+				$userid = $r['userid'];
+				$groupid = $r['groupid'];
+				$username = $r['username'];
+				$nickname = empty($r['nickname']) ? $username : $r['nickname'];
+				
+				$updatearr = array('lastip'=>ip(), 'lastdate'=>SYS_TIME);
+				//vip过期，更新vip和会员组
+				if($r['overduedate'] < SYS_TIME) {
+					$updatearr['vip'] = 0;
+				}		
+
+			   //检查用户积分，更新新用户组，除去邮箱认证、禁止访问、游客组用户、vip用户，如果该用户组不允许自助升级则不进行该操作		
+				if($r['point'] >= 0 && !in_array($r['groupid'], array('1', '7', '8')) && empty($r[vip])) {
+					$grouplist = getcache('grouplist');
+					if(!empty($grouplist[$r['groupid']]['allowupgrade'])) {	
+						$check_groupid = $this->_get_usergroup_bypoint($r['point']);
+		
+						if($check_groupid != $r['groupid']) {
+							$updatearr['groupid'] = $groupid = $check_groupid;
+						}
+					}
+				}
+
+				//如果是connect用户
+				if(!empty($_SESSION['connectid'])) {
+					$updatearr['connectid'] = $_SESSION['connectid'];
+				}
+				if(!empty($_SESSION['from'])) {
+					$updatearr['from'] = $_SESSION['from'];
+				}
+				unset($_SESSION['connectid'], $_SESSION['from']);
+							
+				$this->db->update($updatearr, array('userid'=>$userid));
+				
+				if(!isset($cookietime)) {
+					$get_cookietime = param::get_cookie('cookietime');
+				}
+				$_cookietime = $cookietime ? intval($cookietime) : ($get_cookietime ? $get_cookietime : 0);
+				$cookietime = $_cookietime ? SYS_TIME + $_cookietime : 0;
+				
+				$phpcms_auth = sys_auth($userid."\t".$password, 'ENCODE', get_auth_key('login'));
+				
+				param::set_cookie('auth', $phpcms_auth, $cookietime);
+				param::set_cookie('_userid', $userid, $cookietime);
+				param::set_cookie('_username', $username, $cookietime);
+				param::set_cookie('_groupid', $groupid, $cookietime);
+				param::set_cookie('_nickname', $nickname, $cookietime);
+				$array['status']=0;
+				$array['msg']='用户登陆成功';
+				echo  json_encode($array);die();
+			
+		}
+	}
 	public function login() {
 		$this->_session_start();
 		//获取用户siteid

@@ -120,16 +120,20 @@ define('CSS_PATH',pc_base::load_config('system','css_path'));
 
 define('IMG_PATH',pc_base::load_config('system','img_path'));
 
+
 //动态程序路径
 
 define('APP_PATH','http://'.$_SERVER['HTTP_HOST'].'/');
 
 //前段模板的静态资源路径
-//
 $sitelist = getcache('sitelist','commons');
 $stlye=$sitelist[1]['default_style'];
 $tpl_static_path='http://'.SITE_URL.'/statics/'.$stlye.'_files/';
 define('TPL_STATIC_PATH',$tpl_static_path);
+
+//网站名称
+$site_name=$sitelist[1]['site_title'];
+define('SITE_NAME',$site_name);
 
 //上传文件路径,如果设置了cdn 就用cdn ，否则就用本地网站的目录
 $cdn_url=null;
