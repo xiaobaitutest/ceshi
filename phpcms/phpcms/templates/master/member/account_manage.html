@@ -1,74 +1,120 @@
 {template 'member', 'header'}
-<div id="memberArea">
-{template 'member', 'account_manage_left'}
-<div class="col-auto">
-	<div class="col-1 ">
-		<h5 class="title">{L('memberinfo')}：</h5>
-		<div class="content">
-		<div class="col-1 member-info">
-		<div class="content">
-			<div class="col-left himg">
-				<a title="{L('modify').L('avatar')}" href="index.php?m=member&c=index&a=account_manage_avatar&t=1"><img src="{$avatar[90]}" width="60" height="60" onerror="this.src='{$phpsso_api_url}/statics/images/member/nophoto.gif'"></a>
-			</div>
-			<div class="col-auto">
-				<h5>{if $memberinfo['vip']}<img src="{IMG_PATH}icon/vip.gif">{elseif $memberinfo['overduedate']}<img src="{IMG_PATH}icon/vip-expired.gif" title="{L('overdue')}，{L('overduedate')}：{format::date($memberinfo['overduedate'],1)}">{/if}
-				<font color="{$grouplist[$memberinfo[groupid]]['usernamecolor']}">
-				{if $memberinfo['nickname']} {$memberinfo['nickname']} {else} {$memberinfo['username']}{/if} 
-				</font>
-				{if $memberinfo['email']}（{$memberinfo['email']}）{/if}</h5>
-				<p class="blue">
-				{L('member_group')}：{$grouplist[$memberinfo['groupid']]['name']}，
-				{L('account_remain')}：<font style="color:#F00; font-size:22px;font-family:Georgia,Arial; font-weight:700">{$memberinfo[amount]}</font> {L('unit_yuan')}，
-				{L('point')}：<font style="color:#F00; font-size:12px;font-family:Georgia,Arial; font-weight:700">{$memberinfo[point]}</font> {L('unit_point')}{if $memberinfo['vip']}，vip{L('overduedate')}：<font style="color:#F00; font-size:12px;font-family:Georgia,Arial; font-weight:700">{format::date($memberinfo['overduedate'])}</font>{/if}
-				</p>
-			</div>
-		</div>
-	</div>
-
-	<div class="bk10"></div>	
-	<div class="col-1 ">
-		<h5 class="title">{L('more_configuration')}：</h5>
-		<div class="content">
-				<table width="100%" cellspacing="0" class="table_form">
-					<tr>
-						<th width="120">{L('username')}</th>        
-						<td>{$memberinfo['username']}</td>
-					</tr>
-					<tr>
-						<th width="120">{L('in_model')}：</th>        
-						<td>{$member_model[$memberinfo['modelid']]['name']}</td>
-					</tr>
-					<tr>
-						<th width="120">{L('regtime')}：</th>        
-						<td>{FORMAT::date($memberinfo['regdate'] ,1)}</td>
-					</tr>
-					<tr>
-						<th width="120">{L('lastlogintime')}：</th>        
-						<td>{FORMAT::date($memberinfo['lastdate'] ,1)}</td>
-					</tr>
-					<tr>
-						<th width="120">{L('regip')}：</th>        
-						<td>{$memberinfo['regip']}</td>
-					</tr>
-					<tr>
-						<th width="120">{L('lastip')}：</th>        
-						<td>{$memberinfo['lastip']}</td>
-					</tr>
-					<tr>
-						<th width="120">{L('mp')}：</th>        
-						<td style="color:#ff6600;"><strong>{if $memberinfo['mobile']}{substr($memberinfo['mobile'],0,3)}****{substr($memberinfo['mobile'],-4)}{/if}</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value="更换手机" class="button" onclick="redirect('?m=member&c=index&a=account_change_mobile&t=1')"></td>
-					</tr>
-					{loop $member_modelinfo $k $v}
-					<tr>
-						<th width="120">{$k}：</th>        
-						<td>{$v}</td>
-					</tr>
-					{/loop}
-				</table>
-		</div>
-	</div>
+    <!-- header section end-->
+    <div class="wrapper">
+    <div class="row">
+        <div class="col-sm-12">
+            <section class="panel">
+                <!--search start-->
+                <div id="select_list" class="panel-body" style="padding-top: 25px">
+                     <form id="form" class="form-horizontal" action="http://www.spread.com/promoters/game/index.html" method="post">
+                        <div class="col-md-11">
+                            <div class="form-group">
+                                <label class="control-label col-md-1">开始时间：</label>
+                                <div class="col-md-2">
+                                    <input class="form-control" id="stime" size="16" type="text" name="stime" placeholder="开始时间">
+                                </div>
+                                <label class="control-label col-md-1">结束时间：</label>
+                                <div class="col-md-2">
+                                    <input class="form-control" id="etime" size="16" type="text" name="etime" placeholder="结束时间">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-1" style="width: 50px;">
+                            <div class="col-sm-10" style="float: right">
+                                <a class="btn btn-info" onclick="game.search_data();">查询</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!--search end-->
+            </section>
+            <div id="list"><section class="panel">
+ 
+</section>
+<div class="row">
+    <div class="col-lg-6">
+        <div id="editable-sample_info" class="dataTables_info">Showing 1 to 2 of  entries</div>
+    </div>
+            <div class="col-lg-6">
+            <div class="dataTables_paginate paging_bootstrap pagination">
+                <ul>
+                    <li class="prev disabled"><a onclick="pagetion(1)">← Prev</a></li>
+                    <li class="prev disabled"><a onclick="pagetion(1)">First</a></li>              
+                        <li class="active"><a onclick="pagetion(1)">1</a></li>
+                                        <li class="next disabled"><a onclick="pagetion(1)">Last</a></li>
+                    <li class="next disabled"><a onclick="pagetion(1)">Next → </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
 </div>
+    </div>
 </div>
-<div class="clear"></div>
+    <!--body wrapper end-->
+    <script type="text/javascript">
+        $(document).ready(function () {
+        	$("#stime,#etime").datetimepicker({format: 'yyyy-mm-dd hh:ii:ss ',minView:2});
+            $.post('index.php?m=member&c=site&a=site_list',{},function (res) {
+                $("#list").html(res);
+            })
+        })
+        var site={};
+        site.list=function () {
+            $("#form").ajaxSubmit({
+                url: 'index.php?m=member&c=site&a=site_list',
+                data: {dosubmit: 1},
+                success: function (res) {
+                    $("#list").empty().html(res);
+                }
+            });
+        }
+		
+        site.search_data=function () {
+        	site.list();
+        }
+		site.edit_domain=function (id) {
+            $("#form").ajaxSubmit({
+                url: 'index.php?m=member&c=site&a=site_list',
+                data: {dosubmit: 1,id:id},
+                success: function (res) {
+                    $("#list").empty().html(res);
+                }
+            });
+        }
+		editDomain= function(id) {
+			"use strict";
+			dialogWin({title:'修改密码',url:'index.php?m=member&c=site&a=edit_domain',data:{id:id},width:680,divId:'epd',closeBtn:true,
+				btns: {name:'提交',style:'btn-success',callback:"doEditDomain(epd)"}
+			},function(winf){});
+		};
+		doEditDomain=function(winf){
+			$(winf).find("form").validate(function () {
+				$(winf).find("form").ajaxSubmit({
+					url: 'index.php?m=member&c=site&a=edit_domain',
+					data: {dosubmit: 1},
+					dataType: 'json',
+					success: function (r) {
+						console.log(r.status);
+						if (r.status == 0) {
+							$(winf).modal('hide');
+							site.list();
+						}else{
+							alert("修改失败");
+						}
+					}
+				});
+			});
+		};
+        var pagetion=function(p){
+            $("#form").ajaxSubmit({
+                url: 'index.php?m=member&c=site&a=site_list',
+                data: {dosubmit: 1,page:p},
+                success: function (res) {
+                    $("#list").empty().html(res);
+                }
+            });
+        }
+    </script>
+    </div>
 {template 'member', 'footer'}
