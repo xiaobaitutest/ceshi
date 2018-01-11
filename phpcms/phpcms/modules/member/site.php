@@ -12,10 +12,6 @@ pc_base::load_app_func('global', 'member');
 class site extends foreground {
 	private $times_db;
 	function __construct() {
-		
-		parent::__construct();
-	}
-	function __construct() {
 		//parent::__construct();
 		$this->MYSQLDUMP_PATH='/app/mysql/bin/mysqldump';
 		$this->MYSQL_PATH='/app/mysql/bin/mysql';
@@ -26,6 +22,7 @@ class site extends foreground {
 		$this->memberbank_db= pc_base::load_model('memberbank_model');
 		$this->membermoneylog= pc_base::load_model('membermoneylog_model');
 		$this->master_membermoneylog= pc_base::load_model('master_membermoneylog_model');
+		parent::__construct();
 	}
 	
 	function set_config($config, $config_dir,$filename="system") {
@@ -258,8 +255,8 @@ class site extends foreground {
 		$userid=$this->memberinfo[userid];
 		$site_list_db = pc_base::load_model('member_tixian_model');
 		$where='user_id='.$userid;
-		$page = isset($_GET['page']) && intval($_GET['page']) ? intval($_GET['page']) : 1;
-		$infos = $site_list_db->listinfo($where,$order = 'id DESC',$page, $pages = '2');
+		$page = isset($_POST['page']) && intval($_POST['page']) ? intval($_POST['page']) : 1;
+		$infos = $site_list_db->listinfo($where,$order = 'id DESC',$page, $pages = '8');
 		$member_pages = $site_list_db->member_pages;
 		include template('site', 'list_tixian_log');
 	}
@@ -270,8 +267,8 @@ class site extends foreground {
 		$userid=$this->memberinfo[userid];
 		$site_list_db = pc_base::load_model('member_money_log_model');
 		$where='site_owner_id='.$userid;
-		$page = isset($_GET['page']) && intval($_GET['page']) ? intval($_GET['page']) : 1;
-		$infos = $site_list_db->listinfo($where,$order = 'id DESC',$page, $pages = '2');
+		$page = isset($_POST['page']) && intval($_POST['page']) ? intval($_POST['page']) : 1;
+		$infos = $site_list_db->listinfo($where,$order = 'id DESC',$page, $pages = '8');
 		foreach($infos as $key=>$val){
 			$infos[$key][soruce]=self::get_source($infos[$key][type]);
 		}
