@@ -118,6 +118,12 @@ class content extends admin {
 			include $this->admin_tpl('content_quick');
 		}
 	}
+	public function import_from_my(){
+		include $this->admin_tpl('content_import_list');
+	}
+	public function import_from_master(){
+		include $this->admin_tpl('content_import_list');
+	}
 	public function add() {
 		if(isset($_POST['dosubmit']) || isset($_POST['dosubmit_continue'])) {
 			define('INDEX_HTML',true);
