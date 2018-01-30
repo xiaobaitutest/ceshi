@@ -13,6 +13,8 @@ include $this->admin_tpl('header','admin');?>
 </SCRIPT>
 <div class="pad-10">
 <div class="content-menu ib-a blue line-x">
+<a class="add fb" href="javascript:;" onclick=javascript:openwinx('?m=content&c=content&a=import_from_master&menuid=&catid=<?php echo $catid;?>&pc_hash=<?php echo $_SESSION['pc_hash'];?>','')><em>从自己其它数据库导入</em></a>　
+<a class="add fb" href="javascript:;" onclick=javascript:openwinx('?m=content&c=content&a=import_from_my&menuid=&catid=<?php echo $catid;?>&pc_hash=<?php echo $_SESSION['pc_hash'];?>','')><em>从主站数据库导入</em></a>　
 <a class="add fb" href="javascript:;" onclick=javascript:openwinx('?m=content&c=content&a=add&menuid=&catid=<?php echo $catid;?>&pc_hash=<?php echo $_SESSION['pc_hash'];?>','')><em><?php echo L('add_content');?></em></a>　
 <a href="?m=content&c=content&a=init&catid=<?php echo $catid;?>&pc_hash=<?php echo $pc_hash;?>" <?php if($steps==0 && !isset($_GET['reject'])) echo 'class=on';?>><em><?php echo L('check_passed');?></em></a><span>|</span>
 <?php echo $workflow_menu;?> <a href="javascript:;" onclick="javascript:$('#searchid').css('display','');"><em><?php echo L('search');?></em></a> 
