@@ -74,7 +74,7 @@
         }
         var pagetion=function(p){
             $("#form").ajaxSubmit({
-                url: 'index.php?m=member&c=site&a=lists_templates',
+                url: 'index.php?m=member&c=site&a=list_member_money_log',
                 data: {dosubmit: 1,page:p},
                 success: function (res) {
                     $("#list").empty().html(res);
